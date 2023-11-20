@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:fontFamily="@font/montserrat_bold"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/moderate_text3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="@dimen/short_spacing"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:layout_marginBottom="@dimen/long_spacing"
+        app:cardCornerRadius="33dp"
+        app:cardElevation="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewWeek"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/progress_cardView_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/progress_cardview_image"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_progress_bg" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay1"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <!-- new work-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay1"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:background="@color/white" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay2"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay2"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:background="@color/white" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay3"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay3"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay3"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:background="@color/white" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay4"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay4"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay4"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay5"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay5"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:background="@color/white" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay6"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay6"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:background="@color/white" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textDay7"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="@string/textDay7"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/moderate_text2"
+                    android:visibility="gone" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/lockTextDay7"
+                    android:layout_width="@dimen/btn_height_weekly_program"
+                    android:layout_height="@dimen/btn_height_weekly_program"
+                    android:background="@drawable/textview_circular_shape"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:visibility="visible" />
+
+
+                <!--                <com.google.android.material.card.MaterialCardView-->
+                <!--                    android:id="@+id/cardViewNext"-->
+                <!--                    android:layout_width="40dp"-->
+                <!--                    android:layout_height="40dp"-->
+                <!--                    android:layout_marginStart="45dp"-->
+                <!--                    app:cardBackgroundColor="@android:color/transparent"-->
+                <!--                    app:cardCornerRadius="20dp"-->
+                <!--                    app:cardElevation="2dp"-->
+                <!--                    app:strokeColor="@color/white"-->
+                <!--                    app:strokeWidth="2dp">-->
+
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/imgViewNext"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:src="@drawable/ic_arrow_forward_24" />-->
+                <!--                </com.google.android.material.card.MaterialCardView>-->
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.WeekWiseNutritonFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            app:flow_horizontalAlign="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/whole_week_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/heading2"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageButton
+                android:id="@+id/backArrow"
+                android:layout_width="@dimen/back_btn"
+                android:layout_height="@dimen/back_btn"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/back_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/back_arrow" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutTitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday1Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/dayFirst_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/pure_black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addDayFirstBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addFirstDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addFirstDayIb" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday1Layout" />
+
+                <LinearLayout
+                    android:id="@+id/day1Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+                <!-- <androidx.recyclerview.widget.RecyclerView
+                     android:id="@+id/day1_rv"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:visibility="gone" />-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday2Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+                    <!-- android:layout_marginTop="16dp"-->
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/secondDay_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/pure_black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addSecondDayTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addSecondDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addseconddayib" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday2Layout" />
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/day2_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />-->
+
+                <LinearLayout
+                    android:id="@+id/day2Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday3Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/thirdDay_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/pure_black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addThirdDayTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addThirdDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addthirddayib" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday3Layout" />
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/day3_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />-->
+                <LinearLayout
+                    android:id="@+id/day3Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday4Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/forthDay_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/pure_black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addForthDayTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addForthDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addForthDayIb" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday4Layout" />
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/day4_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>-->
+                <LinearLayout
+                    android:id="@+id/day4Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday5Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/fifthDay_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/pure_black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addFifthDayBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addFifthDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addFifthDayIb" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday5Layout" />
+
+                <!-- <androidx.recyclerview.widget.RecyclerView
+                     android:id="@+id/day5_rv"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:visibility="gone" />-->
+                <LinearLayout
+                    android:id="@+id/day5Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday6Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/sixthDay_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addSixthDayBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addSixthDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addSixthDayIb" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday6Layout" />
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/day6_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />-->
+                <LinearLayout
+                    android:id="@+id/day6Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekday7Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="10dp"
+                    tools:ignore="MissingConstraints">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/seventhDay_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="4dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/addSeventhDayBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/add"
+                        android:textColor="@color/yellow"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/addSeventhDayIB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/addSeventhDayIb" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#AFAFAF"
+                    app:layout_constraintTop_toBottomOf="@id/weekday7Layout" />
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/day7_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />-->
+
+                <LinearLayout
+                    android:id="@+id/day7Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                        android:id="@+id/pager_indicator7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingTop="@dimen/short_spacing"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:spi_dotColor="@color/dotNormal"
+                        app:spi_dotSelectedColor="@color/dotHighlight" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/pager_view_day7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/short_spacing" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:blurOverlayColor="@color/colorOverlay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_lav"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:elevation="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

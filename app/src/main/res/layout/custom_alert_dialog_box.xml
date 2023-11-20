@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:background="@drawable/custom_dialog_style1"
+    android:minWidth="310dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/round_top_background"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_aert_icon"
+            android:contentDescription="@string/app_name"
+            android:visibility="visible"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/alertMTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_text"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_spacing"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="@dimen/medium_spacing"
+        android:gravity="center"
+        android:paddingHorizontal="8dp"
+        android:text="@string/you_have_already_logged_in_on_another_device"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:fontFamily="@font/montserrat_bold" />
+
+    <TextView
+        android:id="@+id/dialog_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_spacing"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/medium_spacing"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:text="@string/do_you_want_to_logout_from_n_that_device"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/dialog_Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/timer_dialog"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/grey_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btn_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:text="@string/btn_no"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btn_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center"
+            android:text="@string/btn_yes"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <!--     android:background="@color/selected_bg"-->
+
+    </LinearLayout>
+
+
+</LinearLayout>

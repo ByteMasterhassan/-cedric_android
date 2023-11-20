@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconColors">
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-mdpi/ic_app_launch.jpg" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-mdpi/ic_app_launch.jpg" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xhdpi/ic_app_launch.jpg" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xhdpi/ic_app_launch.jpg" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xxhdpi/ic_app_launch.jpg" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xxhdpi/ic_app_launch.jpg" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xxxhdpi/ic_app_launch.jpg" />
+    </issue>
+    <issue id="IconDipSize">
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-hdpi/allergyupdatebg.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-mdpi/allergyupdatebg.png" />
+    </issue>
+    <issue id="IconDuplicatesConfig">
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-hdpi/allergyupdatebg.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-mdpi/allergyupdatebg.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xhdpi/allergyupdatebg.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xxhdpi/allergyupdatebg.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-xxxhdpi/allergyupdatebg.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable/allergyupdatebg.png" />
+    </issue>
+    <issue id="IconLauncherShape">
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-hdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-hdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-mdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-mdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-xhdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-xxhdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-xxxhdpi/ic_launcher_adaptive_back.png" />
+        <ignore path="D:/Android Studio Projects/Cedric/Cedric/app/src/main/res/mipmap-xxxhdpi/ic_launcher_adaptive_back.png" />
+    </issue>
+</lint>

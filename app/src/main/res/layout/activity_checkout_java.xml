@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_checkout"
+    android:scaleType="fitXY"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:ignore="Overdraw">
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="@dimen/back_btn"
+        android:layout_height="@dimen/back_btn"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginTop="@dimen/long_spacing"
+        android:background="@null"
+        android:contentDescription="@string/back"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+        android:id="@+id/segmented_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginStart="@dimen/extra_long_spacing"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="@dimen/extra_long_spacing"
+        app:container_color="@color/pure_white"
+        app:fill_color="@color/app_logo"
+        app:gap_size="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPaymentMethod"
+        app:layout_constraintEnd_toStartOf="@+id/blurView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:segment_count="8"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewPaymentMethod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/extra_long_spacing"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="@dimen/extra_long_spacing"
+        android:fontFamily="@font/montserrat_bold"
+        android:maxLines="1"
+        android:text="@string/payment_method"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/segmented_progressbar"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewCreditDebit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/extra_long_spacing"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:padding="4dp"
+        android:visibility="visible"
+        android:text="@string/credit_debit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/field_title_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPaymentMethod"
+        tools:ignore="MissingConstraints" />
+
+    <com.stripe.android.view.CardInputWidget
+        android:id="@+id/cardInputWidget"
+        style="@style/Stripe.CardInputWidget.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:layout_marginHorizontal="@dimen/long_spacing"
+        android:layout_marginStart="@dimen/extra_long_spacing"
+        android:layout_marginEnd="@dimen/extra_long_spacing"
+        android:minHeight="40dp"
+        android:paddingStart="@dimen/medium_spacing"
+        android:visibility="visible"
+        android:paddingEnd="@dimen/medium_spacing"
+        android:textAlignment="center"
+        android:textColor="@color/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCreditDebit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/payButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginStart="@dimen/btn_spacing"
+        android:layout_marginEnd="@dimen/btn_spacing"
+        android:layout_marginBottom="@dimen/btn_spacing"
+        android:background="@drawable/gradient_drawable_button"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:text="@string/proceed"
+        android:visibility="visible"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/btn_text_size"
+        app:backgroundTint="@null"
+        app:cornerRadius="@dimen/button_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/googlePayButton"
+        layout="@layout/buy_with_googlepay_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginStart="@dimen/btn_spacing"
+        android:layout_marginEnd="@dimen/btn_spacing"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        android:layout_marginTop="90dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPaymentMethod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/payWithStripeBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginStart="@dimen/btn_spacing"
+        android:layout_marginEnd="@dimen/btn_spacing"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/gradient_drawable_button"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/buy_with_credit_card"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/btn_text_size"
+        app:backgroundTint="@null"
+        app:cornerRadius="@dimen/button_radius"
+        app:layout_constraintTop_toBottomOf="@+id/googlePayButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/amountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/amount_dummy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/amount_dummy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/amountTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/amountTextView"
+        app:layout_constraintTop_toTopOf="@+id/amountTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/amount"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/amountTextView"
+        app:layout_constraintEnd_toStartOf="@+id/amountTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/amountTextView" />
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+
+    <!-- <FrameLayout
+         android:id="@+id/navigation_container1"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_marginBottom="32dp"
+         android:layout_marginTop="32dp"
+         android:layout_marginStart="16dp"
+         android:layout_marginEnd="16dp"
+         android:visibility="gone"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintBottom_toBottomOf="parent"
+         android:background="@drawable/webview_style"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

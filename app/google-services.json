@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "24571724260",
+    "firebase_url": "https://cedric-8cb7d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cedric-8cb7d",
+    "storage_bucket": "cedric-8cb7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24571724260:android:6ec2ea80604ae7b27587f1",
+        "android_client_info": {
+          "package_name": "com.cedricapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24571724260-gic14vd02hmgq6vguhoshue7qs8uu0ul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cedricapp",
+            "certificate_hash": "596374f26b5eb099f6d2ab0edb1dadf25fa9f628"
+          }
+        },
+        {
+          "client_id": "24571724260-jt30tjr187ekaq8ojh929vd9f8otim63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cedricapp",
+            "certificate_hash": "95643eecf75ef3cd81d9c24007805d30265f1526"
+          }
+        },
+        {
+          "client_id": "24571724260-juqtb734m3tgurn2cm776rttf06odol8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cedricapp",
+            "certificate_hash": "db999dc55e72b96941ad2f17ff3dd7b20cb7393a"
+          }
+        },
+        {
+          "client_id": "24571724260-vg5ot6u7e1nfmjvdk239pdksj226e77e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cedricapp",
+            "certificate_hash": "a8c91f2003e05d87e90a13c1b709f38aa8ba55aa"
+          }
+        },
+        {
+          "client_id": "24571724260-4jdl8134rgd29kg95pfi90n97bpp0hum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxfoeGxPZTs9VWk4mQnvH7Xy9XbKZOeIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24571724260-4jdl8134rgd29kg95pfi90n97bpp0hum.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "24571724260-34u2gu9n5hgt0jdbeun8lafm6ioad1jl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Techozon.Cedric.fitness"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

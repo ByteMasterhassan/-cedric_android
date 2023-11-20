@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.ChangeSubscriptionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/title_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/long_spacing"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="@dimen/back_btn"
+                    android:layout_height="@dimen/back_btn"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:background="@null"
+                    android:contentDescription="@string/back"
+                    android:src="@drawable/back_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewChangeSubscription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/change_subscription_title"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <!--<com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewChoosePlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/xx_long_spacing"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/change_subscription_subtitle"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="@dimen/heading2"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_linear_layout" />-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mTextViewCurrentPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/xxx_long_spacing"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/current_plan_text"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_linear_layout" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mCardViewCurrentPlan"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTextViewCurrentPlan">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/currentPlanClayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="#F48C06"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewCurrentPlanOFF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="170dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@+id/currentPlanPricePerMonth"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/currentPlanPricePerMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/mTextViewCurrentPlanOFF"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewCurrentPlanOFF" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewCurrentPlanDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.923"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewCurrentPlanPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.923"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewCurrentPlanDuration" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFC153"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/currentPlanClayout">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/cardMTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="31dp"
+                            android:layout_marginStart="24dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/current_used_card"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mTextViewNewPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/xxx_long_spacing"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/new_plan_text"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mCardViewCurrentPlan" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mCardViewNewPlan"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTextViewNewPlan">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/newPlanClayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:background="#F48C06"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewNewPlanOFF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="170dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@+id/newPlanPricePerMonth"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/newPlanPricePerMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/mTextViewNewPlanOFF"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewNewPlanOFF" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewNewPlanDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.923"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewNewPlanPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.923"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewNewPlanDuration" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewPlanDurationPriceCardView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/newPlanPricePerMonth"
+                            app:layout_constraintTop_toBottomOf="@+id/newPlanPricePerMonth" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#FFC153"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/newPlanClayout">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/newPlanItemDetailsRecyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_plan_details" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mCardViewTransactionDetails"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mCardViewNewPlan">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/transactionPlanClayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="#F48C06"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewTransactionDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/transaction_details_text"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!--<com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/newPlanPricePerMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/sek_39_month"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="@+id/mTextViewNewPlanOFF"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewNewPlanOFF" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewNewPlanDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/half_yearly_textView"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.923"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewNewPlanPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="24dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/actual_plan_price"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.923"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewNewPlanDuration" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewPlanDurationPriceCardView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/actual_plan_price"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/newPlanPricePerMonth"
+                            app:layout_constraintTop_toBottomOf="@+id/newPlanPricePerMonth" />-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:background="#FFC153"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/transactionPlanClayout">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/order_summery_text"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderPlanType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/new_order_plan_type"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderSummary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderPlanPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderSummary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderReimbursment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/reimbursment_of_previous_plan_text"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderPlanType" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderReimbursmentPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderPlanType" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderAmountExcluded"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/total_payable_amount_excl_of_taxes_text"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderReimbursment" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderAmountExcludedPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderReimbursment" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderAmountInclude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/total_payable_amount_incl_of_taxes_text"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderAmountExcluded" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderAmountIncludePrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderAmountExcluded" />
+
+                        <View
+                            android:id="@+id/lineSeparator"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/black"
+                            android:elevation="2dp"
+                            app:layout_constraintTop_toBottomOf="@id/mTextViewOrderAmountInclude" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderTotalAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:text="@string/total_payment_text"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/lineSeparator" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewOrderTotalAmountPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintTop_toBottomOf="@id/lineSeparator" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelTransaction"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/btn_text_transaction_cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mCardViewTransactionDetails"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCheckoutTransaction"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="#FFC153"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/btn_text_checkout"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mCardViewTransactionDetails" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="10dp"
+            app:blurOverlayColor="@color/colorOverlay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_lav"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:elevation="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+        </eightbitlab.com.blurview.BlurView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

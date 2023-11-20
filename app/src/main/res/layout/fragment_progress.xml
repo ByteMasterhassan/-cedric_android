@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/pullToRefreshProgress"
+    tools:context=".fragment.ProgressFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appTitleCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginTop="@dimen/long_spacing"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewProgramTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:gravity="center_horizontal"
+            android:text="@string/splash_title"
+            android:textAlignment="center"
+            android:textColor="@color/pure_black"
+            android:textSize="@dimen/heading2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="@dimen/back_btn"
+            android:layout_height="@dimen/back_btn"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/back_arrow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/circle_shape"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circular_progressbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appTitleCL"
+            tools:progress="0">
+
+        </ProgressBar>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/pure_black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar"
+            tools:text="0%" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/progress"
+            android:textAlignment="center"
+            android:textColor="@color/pure_black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar"
+            tools:ignore="MissingConstraints" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/goal"
+        android:textColor="@color/pure_black"
+        android:textSize="@dimen/moderate_text"
+        app:layout_constraintBottom_toTopOf="@+id/textViewUserGoal"
+        app:layout_constraintEnd_toStartOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/appTitleCL"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewUserGoal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/montserrat_light"
+        android:text="@string/lose_weight"
+        android:maxLines="4"
+        android:gravity="center"
+        android:textColor="@color/pure_black"
+        android:textSize="@dimen/moderate_text3"
+        app:layout_constraintEnd_toStartOf="@+id/progress_bar"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGoal"
+
+        tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/level"
+            android:textColor="@color/pure_black"
+            android:textSize="@dimen/moderate_text"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+            app:layout_constraintEnd_toStartOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserGoal"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewUserLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@string/beginner"
+            android:textColor="@color/pure_black"
+            android:textSize="@dimen/moderate_text3"
+            app:layout_constraintEnd_toStartOf="@+id/progress_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLevel"
+            tools:ignore="MissingConstraints" />
+
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="@+id/profileName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toEndOf="@id/progress_bar"
+            app:layout_constraintTop_toTopOf="@id/progress_bar"
+            app:layout_constraintVertical_bias="0.625"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="11dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/profile_image"
+            android:textAlignment="center"
+            android:textColor="@color/pure_black"
+            android:textSize="@dimen/moderate_text"
+            app:layout_constraintLeft_toLeftOf="@id/userProfile"
+            app:layout_constraintRight_toRightOf="@+id/userProfile"
+            app:layout_constraintTop_toBottomOf="@+id/userProfile"
+
+            tools:ignore="MissingConstraints" />
+
+  <!--  <LinearLayout
+        android:id="@+id/progressLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginTop="@dimen/long_spacing"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appTitleCL">
+
+       &lt;!&ndash; <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="30"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/level"
+                android:textAlignment="center"
+                android:textColor="@color/pure_black"
+                android:textSize="@dimen/small_text2" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Beginner"
+                android:id="@+id/textViewUserLevel"
+                android:textAlignment="center"
+                android:textColor="@color/pure_black"
+                android:textSize="@dimen/moderate_text2" />
+
+        </LinearLayout>&ndash;&gt;
+
+       &lt;!&ndash; <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:orientation="vertical">
+
+            <antonkozyriatskyi.circularprogressindicator.CircularProgressIndicator
+                android:id="@+id/circular_progress"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:direction="clockwise"
+                app:dotColor="?colorPrimary"
+                app:dotWidth="16dp"
+                app:drawDot="true"
+                app:enableProgressAnimation="true"
+                app:fillBackground="false"
+                app:gradientEndColor="@color/gradient2"
+                app:gradientType="linear"
+                app:progressBackgroundColor="#FEECC7"
+                app:progressBackgroundStrokeWidth="8dp"
+                app:progressCap="round"
+                app:progressColor="@color/gradient1"
+                app:startAngle="270"
+                app:textColor="@color/pure_black"
+                app:textSize="36sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/progress"
+                android:textAlignment="center"
+                android:textColor="@color/pure_black"
+                android:textSize="@dimen/medium_text" />
+
+        </LinearLayout>&ndash;&gt;
+
+    &lt;!&ndash;    <LinearLayout
+            android:id="@+id/profileLL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="30"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/user1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/level"
+                android:id="@+id/profileName"
+                android:textAlignment="center"
+                android:textColor="@color/pure_black"
+                android:textSize="@dimen/medium_text" />
+        </LinearLayout>
+&ndash;&gt;
+
+    </LinearLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProgress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewProgress" />
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

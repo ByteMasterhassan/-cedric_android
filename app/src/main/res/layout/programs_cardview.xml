@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/programs_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            app:cardCornerRadius="@dimen/long_spacing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/bodyProgramImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/program_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_progress_bg" />
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/extra_long_spacing"
+                    android:layout_marginEnd="@dimen/extra_long_spacing"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/monBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="M"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+                    <View
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/pure_white"
+                        android:layout_weight="10" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/tueBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="T"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+                    <View
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/pure_white"
+                        android:layout_weight="10" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/wedBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="W"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+                    <View
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/pure_white"
+                        android:layout_weight="10" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/thuBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="T"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginStart="@dimen/extra_long_spacing"
+                    android:layout_marginEnd="@dimen/extra_long_spacing"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/friBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="F"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+                    <View
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/pure_white"
+                        android:layout_weight="10" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/satBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="S"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+                    <View
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/pure_white"
+                        android:layout_weight="10" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/sunBtn"
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="S"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+                    <View
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/pure_white"
+                        android:layout_weight="10" />
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="@dimen/btn_height"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:backgroundTint="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:text="S"
+                        android:visibility="invisible"
+                        android:textAllCaps="true"
+                        android:textColor="@color/pure_white"
+                        android:textSize="@dimen/sub_heading"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="45dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewProgramName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginBottom="@dimen/xx_long_spacing"
+                android:background="@color/background_black_transparent"
+                android:fontFamily="@font/montserrat_bold"
+                android:maxLines="2"
+                android:paddingStart="@dimen/short_spacing"
+                android:paddingEnd="@dimen/short_spacing"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/heading"
+                 />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewProgramPlan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/long_spacing"
+                android:background="@color/background_black_transparent"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingStart="@dimen/short_spacing"
+                android:paddingEnd="@dimen/short_spacing"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/moderate_text" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/programs_shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:visibility="visible"
+        app:auto_start="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            app:cardCornerRadius="@dimen/long_spacing"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/program_image"
+                android:scaleType="fitXY"
+                android:src="@color/shimmer_placeholder" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginBottom="@dimen/xx_long_spacing"
+                android:fontFamily="@font/montserrat_bold"
+                android:maxLines="2"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/shimmer_placeholder"
+                android:textSize="@dimen/heading"
+                app:textAllCaps="true" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/long_spacing"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingTop="2dp"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/shimmer_placeholder"
+                android:textSize="@dimen/moderate_text" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

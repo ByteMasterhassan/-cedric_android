@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="purple_200">#FFBB86FC</color>-->
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <!--   // <color name="yellow">#FFC153</color>-->
+    <color name="yellow">#D5A243</color>
+    <color name="yellow_transparent">#CCD5A243</color>
+    <color name="black">#1C1C1C</color>
+    <color name="pure_black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorOverlay">#c0000000</color>
+    <!-- <color name="colorOverlay1">#78ffffff</color>-->
+    <color name="light_white">#F1F1F1</color>
+    <color name="selected_bg">#7baecb</color>
+    <color name="shimmer_placeholder">#dddddd</color>
+    <!--<color name="autocomplete_background_color">#EFEFEF</color>-->
+    <!--    <color name="sub_color">#F5F5F5</color>-->
+    <color name="gradient1">#FBBE52</color>
+    <color name="gradient2">#957131</color>
+    <color name="grey_color">#E1D9D1</color>
+
+    <color name="app_logo">#FFC153</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="field_hint_color">#80000000</color>
+    <color name="registration_field_color">#353535</color>
+    <color name="registration_field_hint_color">#80FFFFFF</color>
+    <color name="divider">#C5C5C5</color>
+    <color name="background_black_transparent">#7E000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black">#80000000</color>
+    <color name="grey_line">#eeeeee</color>
+    <color name="grey_text">#7c7c7c</color>
+    <color name="dotNormal">#D9D9D9</color>
+    <color name="dotHighlight">#FFC153</color>
+
+    <color name="track_color">#515151</color> <!-- red color for the track -->
+    <color name="thumb_color">#51A101</color> <!-- green color for the thumb -->
+    <color name="custom_checkbox_checked_color">#D5A243</color>
+    <color name="custom_checkbox_unchecked_color">#80000000</color>
+    <color name="pure_red">#FF0000</color>
+    <!-- <color name="watchvideo">#363C60</color>-->
+
+    <color name="high">#4DFFC153</color>
+    <color name="lineColor">#F4F4F4</color>
+    <color name="yaxis">#A3A3A3</color>
+    <color name="cedric_base_color">#c09240</color>
+    <color name="water">#53acfe</color>
+    <color name="water_high">#3F51B5</color>
+    <color name="notification_unread">#FFF6DF</color>
+    <color name="notification_read">#FFFFFF</color>
+</resources>

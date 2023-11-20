@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    tools:context=".fragment.ShoppingListFragment">
+
+    <!--<LinearLayout
+        android:id="@+id/linearLayoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/back_btn"
+            app:tint="@color/black"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:contentDescription="@string/back_arrow" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="55dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/shopping_list"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutTitle"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNutrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/nutritionImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/butter" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewNutritionName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:paddingStart="8dp"
+                        android:text="@string/banana_peanut_butter_n_super_smoothie"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewLoremIpsumForCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Lorem ipsum"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutNutrition"
+                tools:ignore="MissingConstraints" />
+
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxLoremIpsum"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewLoremIpsumForCheckBox"
+                tools:ignore="MissingConstraints,OnClick" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewDairyAndEggsForCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Dairy &amp; Eggs"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxLoremIpsum"
+                tools:ignore="MissingConstraints" />
+
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox02"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewDairyAndEggsForCheckBox"
+                tools:ignore="MissingConstraints,OnClick" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewFreshFruitsForCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Fresh Fruits"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox02"
+                tools:ignore="MissingConstraints" />
+
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox03"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewFreshFruitsForCheckBox"
+                tools:ignore="MissingConstraints,OnClick" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox04"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox03"
+                tools:ignore="MissingConstraints,OnClick" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewFreshVegetablesForCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Fresh Vegetables"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox04"
+                tools:ignore="MissingConstraints" />
+
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox05"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewFreshVegetablesForCheckBox"
+                tools:ignore="MissingConstraints,OnClick" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox06"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox05"
+                tools:ignore="MissingConstraints,OnClick" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkbox07"
+                style="@style/CustomCheckbox02"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="\t\tLorem ipsum, or ipsum as it is sometimes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox06"
+                tools:ignore="MissingConstraints,OnClick" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

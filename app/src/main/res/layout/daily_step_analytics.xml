@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    tools:context=".fragment.StepAnalyticsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/leftarrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/circularimageview"
+                    android:contentDescription="@string/decrease_date"
+                    android:padding="10dp"
+                    android:src="@drawable/steps_analytics_left_arrow" />
+
+                <TextView
+                    android:id="@+id/dateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="90dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/moderate_text3"
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageButton
+                    android:id="@+id/rightarrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:background="@drawable/circularimageview"
+                    android:contentDescription="@string/increase_date"
+                    android:padding="10dp"
+                    android:src="@drawable/steps_analytics_right_arrow" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:background="#F0F0F0"
+                     android:orientation="vertical">-->
+
+                <TextView
+                    android:id="@+id/totalSummaryHeadingTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/x_long_spacing"
+                    android:text="@string/todays_summary"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/heading"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/step_analytics_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/long_spacing"
+                        android:layout_marginTop="@dimen/medium_spacing"
+                        android:layout_marginEnd="@dimen/short_spacing"
+                        android:layout_marginBottom="@dimen/medium_spacing"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/medium_spacing"
+                            android:paddingEnd="@dimen/medium_spacing">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/short_spacing"
+                                android:contentDescription="@string/steps"
+                                android:src="@drawable/steps" />
+
+                            <TextView
+                                android:id="@+id/steps"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/steps"
+                                android:textColor="#78000000"
+                                android:textSize="@dimen/moderate_text" />
+
+                            <TextView
+                                android:id="@+id/totalStepsTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/short_spacing"
+                                android:text="0"
+                                android:textColor="#AB000000"
+                                android:textSize="@dimen/heading"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/step_analytics_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/short_spacing"
+                        android:layout_marginTop="@dimen/medium_spacing"
+                        android:layout_marginEnd="@dimen/short_spacing"
+                        android:layout_marginBottom="@dimen/medium_spacing"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/medium_spacing"
+                            android:paddingEnd="@dimen/medium_spacing">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/short_spacing"
+                                android:contentDescription="@string/calories"
+                                android:src="@drawable/kcal" />
+
+                            <TextView
+                                android:id="@+id/calories"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/calories"
+                                android:textColor="#78000000"
+                                android:textSize="@dimen/moderate_text" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/short_spacing"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/totalCaloriesTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="#AB000000"
+                                    android:textSize="@dimen/heading"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:id="@+id/Kcal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/short_spacing"
+                                    android:text="@string/Kcal"
+                                    android:textColor="#AB000000"
+                                    android:textSize="@dimen/small_text"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/step_analytics_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/short_spacing"
+                        android:layout_marginTop="@dimen/medium_spacing"
+                        android:layout_marginEnd="@dimen/long_spacing"
+                        android:layout_marginBottom="@dimen/medium_spacing"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/medium_spacing"
+                            android:paddingEnd="@dimen/medium_spacing">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/short_spacing"
+                                android:contentDescription="@string/distance"
+                                android:src="@drawable/distance" />
+
+                            <TextView
+                                android:id="@+id/distance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/distance"
+                                android:textColor="#78000000"
+                                android:textSize="@dimen/moderate_text" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/short_spacing"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/totalDistanceTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="#AB000000"
+                                    android:textSize="@dimen/heading"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/short_spacing"
+                                    android:text="@string/Km"
+                                    android:textColor="#AB000000"
+                                    android:textSize="@dimen/small_text"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <!-- <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/idBarChart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />-->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/step_analytics_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:layout_marginBottom="@dimen/medium_spacing"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.github.mikephil.charting.charts.BarChart
+                            android:id="@+id/barChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="@dimen/medium_spacing" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <!--<com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/medium_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:layout_marginBottom="@dimen/xxx_long_spacing"
+                    android:elevation="10dp"
+                    app:cardBackgroundColor="@color/white">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        &lt;!&ndash;  <com.example.stepcountnewdesign.CircularSeekBar
+                            android:id="@+id/circularSeekBar1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />&ndash;&gt;
+                        <me.bastanfar.semicirclearcprogressbar.SemiCircleArcProgressBar
+                            android:layout_width="260dp"
+                            android:layout_height="130dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="@dimen/long_spacing"
+                            android:layout_marginBottom="@dimen/long_spacing"
+                            app:percent="30"
+                            app:progressBarColor="#FEC153"
+                            app:progressBarWidth="40"
+                            app:progressPlaceHolderColor="#E1E1E1"
+                            app:progressPlaceHolderWidth="40" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:paddingTop="@dimen/xxx_long_spacing"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/total_steps"
+                                android:src="@drawable/totalsteps" />
+
+                            <TextView
+                                android:id="@+id/total_cal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_steps"
+                                android:textColor="#70000000"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3,010"
+                                android:textColor="#9E000000"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>-->
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/barSummaryTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginTop="@dimen/x_long_spacing"
+                android:text="@string/_21st_hourly_summary"
+                android:textColor="@color/black"
+                android:textSize="@dimen/heading"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/step_analytics_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/medium_spacing"
+                    android:layout_marginEnd="@dimen/short_spacing"
+                    android:layout_marginBottom="@dimen/medium_spacing"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:strokeColor="@color/yellow"
+                    app:strokeWidth="@dimen/shortest_spacing">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="106dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/medium_spacing"
+                        android:paddingEnd="@dimen/medium_spacing">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/short_spacing"
+                            android:contentDescription="@string/steps"
+                            android:src="@drawable/steps" />
+
+                        <TextView
+                            android:id="@+id/ste"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/steps"
+                            android:textColor="#78000000"
+                            android:textSize="@dimen/moderate_text" />
+
+                        <TextView
+                            android:id="@+id/stepTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/short_spacing"
+                            android:text="0"
+                            android:textColor="#AB000000"
+                            android:textSize="@dimen/heading"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/step_analytics_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/short_spacing"
+                    android:layout_marginTop="@dimen/medium_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:layout_marginBottom="@dimen/medium_spacing"
+                    android:layout_weight="1"
+                    app:strokeColor="@color/yellow"
+                    app:strokeWidth="@dimen/shortest_spacing">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="106dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/medium_spacing"
+                        android:paddingEnd="@dimen/medium_spacing">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/short_spacing"
+                            android:contentDescription="@string/calories"
+                            android:src="@drawable/kcal" />
+
+                        <TextView
+                            android:id="@+id/calo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/calories"
+                            android:textColor="#78000000"
+                            android:textSize="@dimen/moderate_text" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/short_spacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/caloriesTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#AB000000"
+                                android:textSize="@dimen/heading"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/short_spacing"
+                                android:text="@string/Kcal"
+                                android:textColor="#AB000000"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/step_analytics_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/long_spacing"
+                    android:layout_marginTop="@dimen/medium_spacing"
+                    android:layout_marginEnd="@dimen/long_spacing"
+                    android:layout_marginBottom="@dimen/medium_spacing"
+                    android:layout_weight="1"
+                    app:strokeColor="@color/yellow"
+                    app:strokeWidth="@dimen/shortest_spacing">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="106dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/medium_spacing"
+                        android:paddingEnd="@dimen/medium_spacing">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/short_spacing"
+                            android:contentDescription="@string/distance"
+                            android:src="@drawable/distance" />
+
+                        <TextView
+                            android:id="@+id/dist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/distance"
+                            android:textColor="#78000000"
+                            android:textSize="@dimen/moderate_text" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/short_spacing"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/distanceTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#AB000000"
+                                android:textSize="@dimen/heading"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/short_spacing"
+                                android:text="@string/Km"
+                                android:textColor="#AB000000"
+                                android:textSize="@dimen/small_text"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        app:blurOverlayColor="@color/colorOverlay">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+</androidx.constraintlayout.widget.ConstraintLayout>

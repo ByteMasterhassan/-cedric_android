@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/long_spacing"
+    tools:context=".activity.TestingPurposeActivity"
+    tools:ignore="Overdraw">
+
+   <!-- <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/environmentSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_toggle" />
+        android:theme="@style/environmentSwitch"
+        android:text="Is Staging?" /> -->
+
+    <RadioGroup
+        android:id="@+id/S_apiGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <!--adding a radio button -->
+        <RadioButton
+            android:id="@+id/S_testing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="@string/testing" />
+
+        <RadioButton
+            android:id="@+id/S_testing_beta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="@string/testing_beta"/>
+
+        <!--adding a radio button -->
+        <RadioButton
+            android:id="@+id/S_staging"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="@string/staging" />
+
+        <!--adding a radio button -->
+        <RadioButton
+            android:id="@+id/S_beta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="@string/beta"/>
+
+        <RadioButton
+            android:id="@+id/S_production"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="@string/production"/>
+
+    </RadioGroup>
+</LinearLayout>

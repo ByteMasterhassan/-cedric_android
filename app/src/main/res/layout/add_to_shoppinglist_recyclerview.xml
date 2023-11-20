@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintNutritionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/nutritionCard"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="35dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="3dp"
+            tools:ignore="MissingConstraints">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/nutritionImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/butter"
+                tools:ignore="DuplicateIncludedIds" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--    <ImageView-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:id="@+id/deleteNutrition"-->
+        <!--        android:background="@null"-->
+        <!--        android:elevation="7dp"-->
+        <!--        android:visibility="invisible"-->
+        <!--        android:src="@drawable/ic_baseline_delete_forever_24"-->
+        <!--        app:layout_constraintEnd_toEndOf="@+id/nutritionCard"-->
+        <!--        app:layout_constraintStart_toEndOf="@+id/nutritionCard"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/nutritionCard" />-->
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewNutritionName"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:lines="3"
+            android:text="@string/banana_peanut_butter_n_super_smoothie"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nutritionCard"
+            tools:ignore="DuplicateIncludedIds,MissingConstraints,TextContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayoutForList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--add  several shimmer placeholder layout -->
+
+            <include layout="@layout/shimmer_add_to_shoppinglist_recyclerview"
+                tools:ignore="DuplicateIncludedIds" />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

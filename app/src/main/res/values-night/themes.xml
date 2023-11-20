@@ -1,0 +1,142 @@
+<!--suppress ALL -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CedricFinalAppDesign" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/purple_500</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <!-- Customize your theme here. -->
+        <item name="checkboxStyle">@style/Widget.App.CheckBox</item>
+    </style>
+
+    <style name="Widget.App.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.CheckBox</item>
+    </style>
+
+    <style name="ThemeOverlay.App.CheckBox" parent="">
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/edit_textbox_color</item>
+    </style>
+
+    <style name="profileImg">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="subscriptionCard" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut
+        </item>
+    </style>
+    <!-- <style name="Widget.AppCompat.AutoCompleteTextView.">-->
+
+    <!-- </style>-->
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">60dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="MyCardViewProfile" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut1
+        </item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut1" parent="" tools:ignore="DuplicateDefinition">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+
+    </style>
+
+    <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut2
+        </item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut2" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">60dp</item>
+        <item name="cornerSizeTopLeft">60dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="userStepAnalytics" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MaterialCardView.stepAnalytics.card
+        </item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.stepAnalytics.card" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="Stripe.CardInputWidget.EditText" parent="Stripe.Base.CardInputWidget.EditText">
+        <item name="android:textColorHint">@color/pure_white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:hint">"4242 4242 4242 4242 MM/YY CVC ZIP"</item>
+
+        <item name="android:background">@drawable/textview_outline_style</item>
+        <item name="android:textColor">@color/stripe_text_color</item>
+    </style>
+
+    <style name="CustomCheckbox02" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/custom_round_checkbox</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="delete_check_box" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="colorControlActivated">@color/custom_checkbox_checked_color</item>
+        <item name="colorControlNormal">@color/custom_checkbox_unchecked_color</item>
+        <item name="buttonTint">@color/custom_checkbox_unchecked_color</item>
+    </style>
+
+    <style name="CalendarTheme" parent="Theme.AppCompat.Light">
+        <item name="itemDayBackground">@drawable/selectable_background</item>
+        <item name="itemDayNameTextColor">@color/day_name_text_color</item>
+        <item name="itemDayNumberTextColor">@color/day_number_text_color</item>
+        <item name="itemMonthBackground">@color/selected_bg</item>
+        <item name="itemMonthTextColor">@android:color/white</item>
+    </style>
+
+    <style name="MatchSpinnerTheme" parent="">
+        <item name="android:dropDownListViewStyle">@style/MatchSpinnerStyle</item>
+    </style>
+
+    <style name="MatchSpinnerStyle" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:divider">#e713c0</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+    <style name="step_analytics_card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardForegroundColor">@color/transparent</item>
+        <item name="cardElevation">5dp</item>
+        <item name="rippleColor">@color/yellow</item>
+    </style>
+</resources>

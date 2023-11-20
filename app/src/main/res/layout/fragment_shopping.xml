@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/shopping_fragment">
+<!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefreshShopping"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingFragment">-->
+
+
+
+
+    <LinearLayout
+        android:id="@+id/empty_list_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:elevation="7dp"
+            android:src="@drawable/shopping_cart"
+            android:contentDescription="@string/emptyCart" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shopping_list_is_empty_nplease_add_nutrition_s_to_shopping_list"
+            android:textAlignment="center"
+            android:textColor="@color/pure_black"
+            android:textSize="@dimen/heading2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="18dp"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/shoppingCart"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:paddingVertical="20dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:src="@drawable/shopping_cart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/menu_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/cart" />
+
+                <ImageButton
+                    android:id="@+id/menu_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingVertical="20dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:src="@drawable/dots"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/menu" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/shoppingTitleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="@string/shopping_list"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/shoppingCart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+
+        <!--<androidx.core.widget.NestedScrollView
+        android:id="@+id/verticalScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addToShoppingListRecyclerview"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/nestedConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            &lt;!&ndash;            <androidx.constraintlayout.widget.ConstraintLayout&ndash;&gt;
+            &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;                android:layout_height="wrap_content">&ndash;&gt;
+
+
+            &lt;!&ndash;                <ImageView&ndash;&gt;
+            &lt;!&ndash;                    android:id="@+id/selected_nutrition"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_marginStart="16dp"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_marginEnd="16dp"&ndash;&gt;
+            &lt;!&ndash;                    android:scaleType="fitXY"&ndash;&gt;
+            &lt;!&ndash;                    android:src="@drawable/selected_nutrition"&ndash;&gt;
+            &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/verticalScroll"&ndash;&gt;
+            &lt;!&ndash;                    tools:ignore="NotSibling"&ndash;&gt;
+            &lt;!&ndash;                    tools:layout_editor_absoluteX="16dp" />&ndash;&gt;
+
+            &lt;!&ndash;                <com.google.android.material.card.MaterialCardView&ndash;&gt;
+            &lt;!&ndash;                    android:id="@+id/servingCardView"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_height="50dp"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_marginStart="48dp"&ndash;&gt;
+            &lt;!&ndash;                    android:layout_marginEnd="48dp"&ndash;&gt;
+            &lt;!&ndash;                    app:cardBackgroundColor="@color/yellow"&ndash;&gt;
+            &lt;!&ndash;                    app:layout_constraintBottom_toBottomOf="@id/selected_nutrition"&ndash;&gt;
+            &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/selected_nutrition">&ndash;&gt;
+
+            &lt;!&ndash;                    <LinearLayout&ndash;&gt;
+            &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;
+            &lt;!&ndash;                        android:orientation="horizontal">&ndash;&gt;
+
+            &lt;!&ndash;                        <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+            &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_gravity="center_vertical"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_marginStart="16dp"&ndash;&gt;
+            &lt;!&ndash;                            android:text="Number of Servings"&ndash;&gt;
+            &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+            &lt;!&ndash;                            android:textSize="10dp" />&ndash;&gt;
+
+            &lt;!&ndash;                        <com.google.android.material.card.MaterialCardView&ndash;&gt;
+            &lt;!&ndash;                            android:layout_width="20dp"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_height="20dp"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_marginStart="64dp"&ndash;&gt;
+            &lt;!&ndash;                            app:cardBackgroundColor="#E1E1E1"&ndash;&gt;
+            &lt;!&ndash;                            app:cardCornerRadius="10dp"&ndash;&gt;
+            &lt;!&ndash;                            app:cardElevation="2dp">&ndash;&gt;
+
+            &lt;!&ndash;                            <ImageView&ndash;&gt;
+            &lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                                android:layout_gravity="center_vertical"&ndash;&gt;
+            &lt;!&ndash;                                android:src="@drawable/minus" />&ndash;&gt;
+            &lt;!&ndash;                        </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+            &lt;!&ndash;                        <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+            &lt;!&ndash;                            android:id="@+id/textViewSerialNo"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_gravity="center"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_marginStart="16dp"&ndash;&gt;
+            &lt;!&ndash;                            android:text="0"&ndash;&gt;
+            &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+            &lt;!&ndash;                            android:textSize="12dp" />&ndash;&gt;
+
+            &lt;!&ndash;                        <com.google.android.material.card.MaterialCardView&ndash;&gt;
+            &lt;!&ndash;                            android:layout_width="20dp"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_height="20dp"&ndash;&gt;
+            &lt;!&ndash;                            android:layout_marginStart="16dp"&ndash;&gt;
+            &lt;!&ndash;                            app:cardBackgroundColor="#E1E1E1"&ndash;&gt;
+            &lt;!&ndash;                            app:cardCornerRadius="10dp"&ndash;&gt;
+            &lt;!&ndash;                            app:cardElevation="2dp">&ndash;&gt;
+
+            &lt;!&ndash;                            <ImageView&ndash;&gt;
+            &lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;
+            &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;                                android:layout_gravity="center_vertical"&ndash;&gt;
+            &lt;!&ndash;                                android:paddingBottom="1dp"&ndash;&gt;
+            &lt;!&ndash;                                android:src="@drawable/plus" />&ndash;&gt;
+            &lt;!&ndash;                        </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+            &lt;!&ndash;                    </LinearLayout>&ndash;&gt;
+
+            &lt;!&ndash;                </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+            &lt;!&ndash;            </androidx.constraintlayout.widget.ConstraintLayout>&ndash;&gt;
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/freshFruits_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/category_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="Fresh Fruit"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fruitsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/pantry_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/category_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="General"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pantryRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/veg_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/category_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="Vegetables"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vegRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dairy_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/category_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="Dairy"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dairyRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/meat_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/category_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:text="Meat"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/meatRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        &lt;!&ndash;      &ndash;&gt;
+
+        &lt;!&ndash;        <LinearLayout&ndash;&gt;
+        &lt;!&ndash;            android:id="@+id/linear1"&ndash;&gt;
+        &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;            android:focusableInTouchMode="true"&ndash;&gt;
+        &lt;!&ndash;            android:orientation="vertical"&ndash;&gt;
+        &lt;!&ndash;            app:layout_constraintTop_toBottomOf="@+id/verticalScroll"&ndash;&gt;
+        &lt;!&ndash;            tools:ignore="MissingConstraints">&ndash;&gt;
+
+
+        &lt;!&ndash;            <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                android:id="@+id/linearLayoutNutrition"&ndash;&gt;
+        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginStart="20dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginEnd="16dp"&ndash;&gt;
+        &lt;!&ndash;                android:gravity="center_horizontal"&ndash;&gt;
+        &lt;!&ndash;                android:orientation="horizontal"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintTop_toBottomOf="@+id/linearLayoutTitle"&ndash;&gt;
+        &lt;!&ndash;                tools:ignore="MissingConstraints">&ndash;&gt;
+
+        &lt;!&ndash;                <com.google.android.material.card.MaterialCardView&ndash;&gt;
+        &lt;!&ndash;                    android:layout_width="100dp"&ndash;&gt;
+        &lt;!&ndash;                    android:layout_height="100dp"&ndash;&gt;
+        &lt;!&ndash;                    app:cardCornerRadius="50dp"&ndash;&gt;
+        &lt;!&ndash;                    app:cardElevation="4dp"&ndash;&gt;
+        &lt;!&ndash;                    app:strokeColor="@color/white"&ndash;&gt;
+        &lt;!&ndash;                    app:strokeWidth="4dp">&ndash;&gt;
+
+        &lt;!&ndash;                    <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;
+        &lt;!&ndash;                        android:id="@+id/nutritionImage"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_height="match_parent"&ndash;&gt;
+        &lt;!&ndash;                        android:src="@drawable/butter" />&ndash;&gt;
+        &lt;!&ndash;                </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+        &lt;!&ndash;                <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                    android:layout_gravity="center_vertical"&ndash;&gt;
+        &lt;!&ndash;                    android:orientation="vertical">&ndash;&gt;
+
+        &lt;!&ndash;                    <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                        android:id="@+id/textViewNutritionName"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_height="67dp"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_gravity="center_vertical"&ndash;&gt;
+        &lt;!&ndash;                        android:fontFamily="@font/montserrat_bold"&ndash;&gt;
+        &lt;!&ndash;                        android:paddingStart="8dp"&ndash;&gt;
+        &lt;!&ndash;                        android:text="Peanuts butter &amp; \nJelly oats "&ndash;&gt;
+        &lt;!&ndash;                        android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                        android:textSize="18sp" />&ndash;&gt;
+
+        &lt;!&ndash;                    <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                        android:orientation="horizontal">&ndash;&gt;
+
+        &lt;!&ndash;                        <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:orientation="horizontal"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingStart="8dp">&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                                android:text="PREP:"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12sp" />&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:id="@+id/textViewDayTime"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+
+        &lt;!&ndash;                                android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                                android:text="35 mins"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12sp" />&ndash;&gt;
+        &lt;!&ndash;                        </LinearLayout>&ndash;&gt;
+
+        &lt;!&ndash;                        <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_marginStart="16dp"&ndash;&gt;
+        &lt;!&ndash;                            android:orientation="horizontal">&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                                android:text="Cook:"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12sp" />&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:id="@+id/textViewCookStatus"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                                android:text="None"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12sp" />&ndash;&gt;
+        &lt;!&ndash;                        </LinearLayout>&ndash;&gt;
+        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;
+        &lt;!&ndash;                </LinearLayout>&ndash;&gt;
+        &lt;!&ndash;            </LinearLayout>&ndash;&gt;
+
+        &lt;!&ndash;            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                android:id="@+id/textViewMethod"&ndash;&gt;
+        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginStart="26dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginTop="15dp"&ndash;&gt;
+        &lt;!&ndash;                android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                android:paddingBottom="4dp"&ndash;&gt;
+        &lt;!&ndash;                android:text="Method"&ndash;&gt;
+        &lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                android:textSize="14dp"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintHorizontal_bias="0.0"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintTop_toBottomOf="@+id/linearLayoutNutrition"&ndash;&gt;
+        &lt;!&ndash;                tools:ignore="MissingConstraints" />&ndash;&gt;
+
+
+        &lt;!&ndash;            <com.google.android.material.card.MaterialCardView&ndash;&gt;
+        &lt;!&ndash;                android:id="@+id/methodCardView"&ndash;&gt;
+        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginStart="16dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginEnd="16dp"&ndash;&gt;
+        &lt;!&ndash;                app:cardBackgroundColor="#fff"&ndash;&gt;
+        &lt;!&ndash;                app:cardCornerRadius="20dp"&ndash;&gt;
+        &lt;!&ndash;                app:cardElevation="6dp"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintTop_toBottomOf="@+id/textViewMethod"&ndash;&gt;
+        &lt;!&ndash;                tools:ignore="MissingConstraints">&ndash;&gt;
+
+
+        &lt;!&ndash;                <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                    android:layout_marginStart="10dp"&ndash;&gt;
+        &lt;!&ndash;                    android:orientation="vertical"&ndash;&gt;
+        &lt;!&ndash;                    android:padding="16dp"&ndash;&gt;
+        &lt;!&ndash;                    android:paddingBottom="6dp"&ndash;&gt;
+        &lt;!&ndash;                    tools:ignore="DuplicateIds,MissingConstraints">&ndash;&gt;
+
+        &lt;!&ndash;                    <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                        android:orientation="horizontal">&ndash;&gt;
+
+        &lt;!&ndash;                        <com.google.android.material.card.MaterialCardView&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="40dp"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="40dp"&ndash;&gt;
+        &lt;!&ndash;                            app:cardBackgroundColor="@color/yellow"&ndash;&gt;
+        &lt;!&ndash;                            app:cardCornerRadius="20dp"&ndash;&gt;
+        &lt;!&ndash;                            app:cardElevation="2dp">&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;
+        &lt;!&ndash;                                android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                                android:text="1"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12dp" />&ndash;&gt;
+
+
+        &lt;!&ndash;                        </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+        &lt;!&ndash;                        <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_gravity="center_vertical"&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingStart="8dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Lorem ipsum, or lipsum as it is sometimes known,&ndash;&gt;
+        &lt;!&ndash;is dummy text used in laying out print, graphic&ndash;&gt;
+        &lt;!&ndash;or web designs."&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            android:textSize="10sp" />&ndash;&gt;
+        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;
+
+        &lt;!&ndash;                    <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                        android:id="@+id/linearLayoutForAfternoon"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_marginTop="12dp"&ndash;&gt;
+        &lt;!&ndash;                        android:orientation="horizontal"&ndash;&gt;
+        &lt;!&ndash;                        android:paddingTop="4dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <com.google.android.material.card.MaterialCardView&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="40dp"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="40dp"&ndash;&gt;
+        &lt;!&ndash;                            app:cardBackgroundColor="@color/yellow"&ndash;&gt;
+        &lt;!&ndash;                            app:cardCornerRadius="20dp"&ndash;&gt;
+        &lt;!&ndash;                            app:cardElevation="2dp">&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;
+        &lt;!&ndash;                                android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                                android:text="2"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12dp" />&ndash;&gt;
+
+
+        &lt;!&ndash;                        </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+        &lt;!&ndash;                        <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_gravity="center_vertical"&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingStart="8dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Lorem ipsum, or lipsum as it is sometimes known,&ndash;&gt;
+        &lt;!&ndash;is dummy text used in laying out print, graphic&ndash;&gt;
+        &lt;!&ndash;or web designs."&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            android:textSize="10sp" />&ndash;&gt;
+        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;
+
+        &lt;!&ndash;                    <LinearLayout&ndash;&gt;
+        &lt;!&ndash;                        android:id="@+id/linearLayoutForNight"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                        android:layout_marginTop="12dp"&ndash;&gt;
+        &lt;!&ndash;                        android:orientation="horizontal"&ndash;&gt;
+        &lt;!&ndash;                        android:paddingTop="4dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <com.google.android.material.card.MaterialCardView&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="40dp"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="40dp"&ndash;&gt;
+        &lt;!&ndash;                            app:cardBackgroundColor="@color/yellow"&ndash;&gt;
+        &lt;!&ndash;                            app:cardCornerRadius="20dp"&ndash;&gt;
+        &lt;!&ndash;                            app:cardElevation="2dp">&ndash;&gt;
+
+        &lt;!&ndash;                            <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                                android:layout_gravity="center"&ndash;&gt;
+        &lt;!&ndash;                                android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                                android:text="3"&ndash;&gt;
+        &lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                                android:textSize="12dp" />&ndash;&gt;
+
+
+        &lt;!&ndash;                        </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+        &lt;!&ndash;                        <com.google.android.material.textview.MaterialTextView&ndash;&gt;
+        &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                            android:layout_gravity="center_vertical"&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingStart="8dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Lorem ipsum, or lipsum as it is sometimes known,&ndash;&gt;
+        &lt;!&ndash;is dummy text used in laying out print, graphic&ndash;&gt;
+        &lt;!&ndash;or web designs."&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            android:textSize="10sp" />&ndash;&gt;
+        &lt;!&ndash;                    </LinearLayout>&ndash;&gt;
+
+        &lt;!&ndash;                </LinearLayout>&ndash;&gt;
+        &lt;!&ndash;            </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+        &lt;!&ndash;            <com.google.android.material.card.MaterialCardView&ndash;&gt;
+        &lt;!&ndash;                android:id="@+id/IngridentsCardView"&ndash;&gt;
+        &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginStart="16dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginTop="20dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginEnd="16dp"&ndash;&gt;
+        &lt;!&ndash;                app:cardBackgroundColor="#fff"&ndash;&gt;
+        &lt;!&ndash;                app:cardCornerRadius="20dp"&ndash;&gt;
+        &lt;!&ndash;                app:cardElevation="6dp"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintTop_toBottomOf="@+id/methodCardView"&ndash;&gt;
+        &lt;!&ndash;                tools:ignore="MissingConstraints">&ndash;&gt;
+
+        &lt;!&ndash;                <TableLayout&ndash;&gt;
+        &lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;
+        &lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;
+        &lt;!&ndash;                    android:padding="20dp">&ndash;&gt;
+
+        &lt;!&ndash;                    <TableRow>&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Ingrds"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Apple"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Banana"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Fat Milk"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Oat"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat,RtlHardcoded" />&ndash;&gt;
+        &lt;!&ndash;                    </TableRow>&ndash;&gt;
+
+        &lt;!&ndash;                    <TableRow android:layout_marginTop="10dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Quantity"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="110g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="100g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="200g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="35g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat,RtlHardcoded" />&ndash;&gt;
+        &lt;!&ndash;                    </TableRow>&ndash;&gt;
+
+        &lt;!&ndash;                    <TableRow android:layout_marginTop="10dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Fats"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="0g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="0.1g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="6g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="2.4g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat,RtlHardcoded" />&ndash;&gt;
+        &lt;!&ndash;                    </TableRow>&ndash;&gt;
+
+        &lt;!&ndash;                    <TableRow android:layout_marginTop="8dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Kcal"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="52.8g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="95g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="120g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="130.7g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat,RtlHardcoded" />&ndash;&gt;
+        &lt;!&ndash;                    </TableRow>&ndash;&gt;
+
+        &lt;!&ndash;                    <TableRow android:layout_marginTop="10dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:text="Proteins"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="0g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="1.1g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="7g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="3.3g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat,RtlHardcoded" />&ndash;&gt;
+        &lt;!&ndash;                    </TableRow>&ndash;&gt;
+
+        &lt;!&ndash;                    <TableRow android:layout_marginTop="10dp">&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/poppins_bold"&ndash;&gt;
+        &lt;!&ndash;                            android:text="@string/carbs"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="11.6g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="21.3g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="9.3g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat" />&ndash;&gt;
+
+        &lt;!&ndash;                        <TextView&ndash;&gt;
+        &lt;!&ndash;                            android:fontFamily="@font/montserrat_light"&ndash;&gt;
+        &lt;!&ndash;                            android:gravity="right"&ndash;&gt;
+        &lt;!&ndash;                            android:paddingEnd="10dp"&ndash;&gt;
+        &lt;!&ndash;                            android:text="22.4g"&ndash;&gt;
+        &lt;!&ndash;                            android:textAlignment="center"&ndash;&gt;
+        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                            tools:ignore="RtlCompat,RtlHardcoded" />&ndash;&gt;
+        &lt;!&ndash;                    </TableRow>&ndash;&gt;
+        &lt;!&ndash;                </TableLayout>&ndash;&gt;
+        &lt;!&ndash;            </com.google.android.material.card.MaterialCardView>&ndash;&gt;
+
+        &lt;!&ndash;            <com.google.android.material.button.MaterialButton&ndash;&gt;
+        &lt;!&ndash;                android:id="@+id/btnAddToShoppingList"&ndash;&gt;
+        &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;
+        &lt;!&ndash;                android:layout_height="65dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_gravity="center"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginTop="30dp"&ndash;&gt;
+        &lt;!&ndash;                android:layout_marginBottom="20dp"&ndash;&gt;
+        &lt;!&ndash;                android:backgroundTint="@color/yellow"&ndash;&gt;
+        &lt;!&ndash;                android:fontFamily="@font/montserrat_medium"&ndash;&gt;
+        &lt;!&ndash;                android:paddingVertical="12dp"&ndash;&gt;
+        &lt;!&ndash;                android:text="Add to shopping List"&ndash;&gt;
+        &lt;!&ndash;                android:textAllCaps="false"&ndash;&gt;
+        &lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;
+        &lt;!&ndash;                android:textSize="16sp"&ndash;&gt;
+        &lt;!&ndash;                app:cornerRadius="45dp"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintHorizontal_bias="0.498"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;
+        &lt;!&ndash;                app:layout_constraintTop_toBottomOf="@+id/IngridentsCardView"&ndash;&gt;
+        &lt;!&ndash;                tools:ignore="MissingConstraints" />&ndash;&gt;
+
+        &lt;!&ndash;        </LinearLayout>&ndash;&gt;
+
+    </androidx.core.widget.NestedScrollView>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addToShoppingListRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutTitle"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoriesRR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->

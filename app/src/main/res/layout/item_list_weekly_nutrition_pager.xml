@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutItemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints">-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:layout_marginBottom="@dimen/long_spacing"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/nutritionImageBreakFast"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:elevation="7dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butter"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewNutritionNameBreakFast"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="19dp"
+                    android:maxLines="2"
+                    android:text="@string/banana_peanut_butter_n_super_smoothie"
+                    app:layout_constraintBottom_toBottomOf="@id/nutritionImageBreakFast"
+                    app:layout_constraintEnd_toStartOf="@+id/linear_btns_break"
+                    app:layout_constraintStart_toEndOf="@id/nutritionImageBreakFast"
+                    app:layout_constraintTop_toTopOf="@id/nutritionImageBreakFast" />
+
+                <LinearLayout
+                    android:id="@+id/linear_btns_break"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/minus_btn_iv_break"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_minus_btn"
+                        android:contentDescription="@string/minus_btn_cv" />
+
+                    <TextView
+                        android:id="@+id/quantity_tv_break"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:maxLength="2"
+                        android:text="@string/item_quan"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/add_btn_iv_break"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_add_btn"
+                        android:contentDescription="@string/app_name" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/nutritionImageLunch"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:elevation="7dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butter"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewNutritionNameLunch"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="19dp"
+                    android:maxLines="2"
+                    android:text="@string/banana_peanut_butter_n_super_smoothie"
+                    app:layout_constraintBottom_toBottomOf="@id/nutritionImageLunch"
+                    app:layout_constraintEnd_toStartOf="@+id/linear_btns_Lunch"
+                    app:layout_constraintStart_toEndOf="@id/nutritionImageLunch"
+                    app:layout_constraintTop_toTopOf="@id/nutritionImageLunch" />
+
+                <LinearLayout
+                    android:id="@+id/linear_btns_Lunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/minus_btn_iv_lunch"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_minus_btn"
+                        android:contentDescription="@string/minus_btn_cv_lunch" />
+
+                    <TextView
+                        android:id="@+id/quantity_tv_lunch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:maxLength="2"
+                        android:text="@string/item_quan"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/add_btn_iv_lunch"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_add_btn"
+                        android:contentDescription="@string/add_btn_iv_lunch" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/nutritionImageDinner"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:elevation="7dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butter"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewNutritionNameDinner"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="19dp"
+                    android:maxLines="2"
+                    android:text="@string/banana_peanut_butter_n_super_smoothie"
+                    app:layout_constraintBottom_toBottomOf="@id/nutritionImageDinner"
+                    app:layout_constraintEnd_toStartOf="@+id/linear_btns"
+                    app:layout_constraintStart_toEndOf="@id/nutritionImageDinner"
+                    app:layout_constraintTop_toTopOf="@id/nutritionImageDinner" />
+
+                <LinearLayout
+                    android:id="@+id/linear_btns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/minus_btn_iv_dinner"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_minus_btn"
+                        android:contentDescription="@string/minus_btn_iv_dinner" />
+
+                    <TextView
+                        android:id="@+id/quantity_tv_dinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:maxLength="2"
+                        android:text="@string/item_quan"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/add_btn_iv_dinner"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_add_btn"
+                        android:contentDescription="@string/add_btn_iv_dinner" />
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+ <!--   </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <!--<com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayoutItemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            &lt;!&ndash;add  several shimmer placeholder layout &ndash;&gt;
+
+            <include layout="@layout/shimmer_item_list_weekly_nutrition"></include>
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

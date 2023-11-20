@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/yoga"
+            android:scaleType="fitXY"
+            android:src="@drawable/recomended_1" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/explore_tag_style"
+            android:fontFamily="@font/montserrat_medium"
+            android:paddingHorizontal="3dp"
+            android:paddingVertical="2dp"
+            android:text="@string/medium"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewMainWorkOutName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="95dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/classical_yoga"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/moderate_text" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="110dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/timer"
+                android:src="@drawable/timer" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewNumberOfWorkouts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/_3_mins"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text" />
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/linearLayoutForMAEView"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:paddingBottom="6dp">-->
+
+    <!--&lt;!&ndash;        <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/linearLayoutForMorning"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:orientation="horizontal">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.card.MaterialCardView&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/morningImageCardView"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:cardCornerRadius="25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_marginBottom="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:cardElevation="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:strokeColor="@color/white"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:strokeWidth="2dp">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:id="@+id/imageWorkout1"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:src="@drawable/workout1_e1" />&ndash;&gt;-->
+    <!--&lt;!&ndash;            </com.google.android.material.card.MaterialCardView>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/textViewWorkout1Name"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:fontFamily="@font/poppins_bold"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:paddingStart="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:text="Belly fat Burning"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:textSize="16sp" />&ndash;&gt;-->
+    <!--&lt;!&ndash;        </LinearLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;        <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:orientation="horizontal"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/linearLayoutForAfternoon"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:paddingTop="4dp">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.card.MaterialCardView&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/afternoonImageCardView"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:cardCornerRadius="25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_marginBottom="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:cardElevation="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:strokeColor="@color/white"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:strokeWidth="2dp">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:id="@+id/imageWorkout2"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:src="@drawable/workout1_e2" />&ndash;&gt;-->
+    <!--&lt;!&ndash;            </com.google.android.material.card.MaterialCardView>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:fontFamily="@font/poppins_bold"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:paddingStart="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:text="Fat Burning HIIT"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/textViewWorkout2Name"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:textSize="16sp" />&ndash;&gt;-->
+    <!--&lt;!&ndash;        </LinearLayout>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;        <LinearLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:orientation="horizontal"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/linearLayoutForNight"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:paddingTop="4dp">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.card.MaterialCardView&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/nightImageCardView"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="50dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:cardCornerRadius="25dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_marginBottom="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:cardElevation="2dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:strokeColor="@color/white"&ndash;&gt;-->
+    <!--&lt;!&ndash;                app:strokeWidth="2dp">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;                <de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:id="@+id/imageWorkout3"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:layout_height="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;                    android:src="@drawable/workout1_e3" />&ndash;&gt;-->
+    <!--&lt;!&ndash;            </com.google.android.material.card.MaterialCardView>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;            <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:layout_gravity="center_vertical"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:fontFamily="@font/poppins_bold"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:paddingStart="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:text="Get rid off Fat"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:id="@+id/textViewWorkout3Name"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:textColor="@color/black"&ndash;&gt;-->
+    <!--&lt;!&ndash;                android:textSize="16sp" />&ndash;&gt;-->
+    <!--&lt;!&ndash;        </LinearLayout>&ndash;&gt;-->
+    <!--    </LinearLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+

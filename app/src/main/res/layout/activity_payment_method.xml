@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity.FitnessLevelActivity"
+    tools:ignore="Overdraw">
+
+    <!-- <com.google.android.material.textview.MaterialTextView
+         android:id="@+id/textViewPaymentMethod"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="32dp"
+         android:layout_marginTop="90dp"
+         android:layout_marginEnd="32dp"
+         android:fontFamily="@font/montserrat_bold"
+         android:maxLines="1"
+         android:text="Payment Method"
+         android:textAlignment="center"
+         android:textAllCaps="false"
+         android:textColor="@color/white"
+         android:textSize="26sp"
+         android:textStyle="bold"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         tools:ignore="MissingConstraints" />
+
+     <com.google.android.material.textview.MaterialTextView
+         android:id="@+id/textViewCreditDebit"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="56dp"
+         android:layout_marginTop="50dp"
+         android:fontFamily="@font/montserrat_medium"
+         android:text="Credit/Debit"
+         android:textColor="@color/white"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textViewPaymentMethod"
+         tools:ignore="MissingConstraints" />
+
+     <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/textInputLayoutCardType"
+         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="32dp"
+         android:layout_marginTop="4dp"
+         android:layout_marginEnd="32dp"
+         android:hint="Visa"
+         android:textColorHint="#858585"
+         app:boxCornerRadiusBottomEnd="45dp"
+         app:boxCornerRadiusBottomStart="45dp"
+         app:boxCornerRadiusTopEnd="45dp"
+         app:boxCornerRadiusTopStart="45dp"
+         app:boxStrokeColor="@color/edit_textbox_color"
+         app:boxStrokeWidth="2dp"
+         app:endIconTint="@color/yellow"
+         app:hintEnabled="false"
+         app:hintTextColor="@color/yellow"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.506"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textViewCreditDebit"
+         tools:ignore="MissingConstraints">
+
+         <AutoCompleteTextView
+             android:id="@+id/paymentCard"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/montserrat_medium"
+             android:inputType="textNoSuggestions"
+             android:paddingStart="32dp"
+             android:textColor="@color/yellow" />
+
+     </com.google.android.material.textfield.TextInputLayout>
+
+     <com.google.android.material.textview.MaterialTextView
+         android:id="@+id/textViewCardNumber"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="56dp"
+         android:layout_marginTop="30dp"
+         android:fontFamily="@font/montserrat_medium"
+         android:text="Card Number"
+         android:textColor="@color/white"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCardType"
+         tools:ignore="MissingConstraints" />
+
+     <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/textInputLayoutCardNumber"
+         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="32dp"
+         android:layout_marginTop="4dp"
+         android:layout_marginEnd="32dp"
+         android:hint="1234 2344 234 215"
+         app:boxCornerRadiusBottomEnd="45dp"
+         app:boxCornerRadiusBottomStart="45dp"
+         app:boxCornerRadiusTopEnd="45dp"
+         app:boxCornerRadiusTopStart="45dp"
+         app:boxStrokeColor="@color/edit_textbox_color"
+         app:boxStrokeWidth="2dp"
+         app:hintEnabled="false"
+         app:hintTextColor="@color/black"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.506"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textViewCardNumber"
+         tools:ignore="MissingConstraints">
+
+         <com.androidwidgets.formatedittext.widgets.FormatEditText
+             android:id="@+id/editTextCardNumber"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/montserrat_medium"
+             android:inputType="number"
+             android:maxLength="14"
+             android:singleLine="true"
+             android:textColor="@color/yellow" />
+
+     </com.google.android.material.textfield.TextInputLayout>
+
+     <com.google.android.material.textview.MaterialTextView
+         android:id="@+id/textViewExpDate"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="56dp"
+         android:layout_marginTop="30dp"
+         android:fontFamily="@font/montserrat_medium"
+         android:text="Exp.date"
+         android:textColor="@color/white"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCardNumber"
+         tools:ignore="MissingConstraints" />
+
+     <com.google.android.material.textfield.TextInputLayout
+         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="32dp"
+         android:layout_marginTop="4dp"
+         android:layout_marginEnd="32dp"
+         android:hint="12-12-2020"
+         app:boxCornerRadiusBottomEnd="45dp"
+         app:boxCornerRadiusBottomStart="45dp"
+         app:boxCornerRadiusTopEnd="45dp"
+         app:boxCornerRadiusTopStart="45dp"
+         app:boxStrokeColor="@color/edit_textbox_color"
+         app:boxStrokeWidth="2dp"
+         app:hintEnabled="false"
+         app:hintTextColor="@color/black"
+         app:layout_constraintEnd_toStartOf="@+id/textInputLayoutCvv"
+         app:layout_constraintHorizontal_bias="0.0"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textViewExpDate"
+         tools:ignore="MissingConstraints">
+
+         <com.google.android.material.textfield.TextInputEditText
+             android:id="@+id/editTextExpDate"
+             android:layout_width="135dp"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/montserrat_medium"
+             android:inputType="date"
+             android:textColor="@color/yellow"
+             tools:ignore="MissingConstraints" />
+     </com.google.android.material.textfield.TextInputLayout>
+
+
+     <com.google.android.material.textview.MaterialTextView
+         android:id="@+id/textViewCvv"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="30dp"
+         android:layout_marginEnd="56dp"
+         android:fontFamily="@font/montserrat_medium"
+         android:text="CVV"
+         android:textColor="@color/white"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.714"
+         app:layout_constraintStart_toEndOf="@+id/textViewExpDate"
+         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCardNumber"
+         tools:ignore="MissingConstraints" />
+
+     <com.google.android.material.textfield.TextInputLayout
+         android:id="@+id/textInputLayoutCvv"
+         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="4dp"
+         android:layout_marginEnd="32dp"
+         android:hint="1234"
+         app:boxCornerRadiusBottomEnd="45dp"
+         app:boxCornerRadiusBottomStart="45dp"
+         app:boxCornerRadiusTopEnd="45dp"
+         app:boxCornerRadiusTopStart="45dp"
+         app:boxStrokeColor="@color/edit_textbox_color"
+         app:boxStrokeWidth="2dp"
+         app:hintEnabled="false"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textViewCvv"
+         tools:ignore="MissingConstraints">
+
+         <com.google.android.material.textfield.TextInputEditText
+             android:id="@+id/editTextCvv"
+             android:layout_width="135dp"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/montserrat_medium"
+             android:inputType="number"
+             android:maxLength="4"
+             android:textColor="@color/yellow"
+             tools:ignore="MissingConstraints" />
+     </com.google.android.material.textfield.TextInputLayout>
+
+
+     <com.google.android.material.button.MaterialButton
+         android:id="@+id/btnPaymentMethod"
+         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+         android:layout_width="wrap_content"
+         android:layout_height="40dp"
+         android:layout_gravity="center"
+         android:layout_marginTop="50dp"
+         android:background="@drawable/gradient_drawable_button"
+         android:fontFamily="@font/montserrat_light"
+         android:text="Add Payment Method"
+         android:textAllCaps="false"
+         android:textColor="@color/black"
+         android:textSize="18sp"
+         app:backgroundTint="@null"
+         app:cornerRadius="45dp"
+         app:flow_verticalAlign="center"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCvv"
+         tools:ignore="MissingConstraints" />-->
+
+ </androidx.constraintlayout.widget.ConstraintLayout>

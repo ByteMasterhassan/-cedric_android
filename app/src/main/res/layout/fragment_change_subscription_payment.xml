@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.ChangeSubscriptionPaymentFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/title_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="@dimen/back_btn"
+                android:layout_height="@dimen/back_btn"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:background="@null"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewChangeSubscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="48dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="2dp"
+                android:text="@string/payment_method_title"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/backBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mPaymentCard"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="#FFC153"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_linear_layout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/paymentCardType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/card_type"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/cardSymbolImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/cardsymbol"
+                    android:src="@drawable/master_card_symbol"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewCardNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="80dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@string/card_number_text"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/paymentCardType" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewCardHolderName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/card_holder_name"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCardNumber" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewCardExpiryDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/card_expiry_date"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardSymbolImage" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mTextViewAddNewPaymentCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:drawableStart="@drawable/add_icon_payment"
+            android:drawablePadding="8dp"
+            android:elevation="4dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/add_new_payment_method_text"
+            android:textAlignment="viewEnd"
+            android:textColor="#8E8E8E"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mPaymentCard" />
+        <!--  <com.google.android.material.textview.MaterialTextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/mTextViewSelectPaymentCard"
+              android:text="@string/select_payment_method_text"
+              android:layout_marginStart="24dp"
+              android:layout_marginTop="24dp"
+              android:textColor="#8E8E8E"
+              android:textSize="16sp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/mPaymentCard"/>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/addedCardRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTextViewAddNewPaymentCard"
+            tools:itemCount="3"
+            tools:listitem="@layout/added_cards_items" />
+
+
+        <!--<com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/mTextViewAddNewPaymentCard"
+            android:text="@string/add_new_payment_method_text"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/white"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:textColor="#8E8E8E"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:drawableStart="@drawable/add_icon_payment"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addedCardRecyclerView"/>-->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckoutTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#FFC153"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/btn_proceed_to_checkout"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addedCardRecyclerView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_lav"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:elevation="7dp"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/blurBkgTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:text="@string/adding_your_updated_diet_plan" />
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

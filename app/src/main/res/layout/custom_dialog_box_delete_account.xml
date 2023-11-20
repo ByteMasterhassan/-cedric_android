@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:background="@drawable/custom_dialog_style1"
+    android:minWidth="380dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/round_top_background"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_aert_icon"
+            android:contentDescription="@string/app_name"
+            android:visibility="visible" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:text="@string/delete_account_textView"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!--<com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_spacing"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="@dimen/medium_spacing"
+        android:gravity="center"
+        android:paddingHorizontal="8dp"
+        android:text="@string/subscription_expiration_date"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:fontFamily="@font/montserrat_regular" />-->
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dialog_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="start"
+        android:text="@string/sureity_delete_account"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mTextViewDeleteAccountDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/long_spacing"
+        android:layout_marginTop="@dimen/long_spacing"
+        android:text="@string/delete_account_description"
+        android:textColor="@color/black"
+        tools:targetApi="o" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkBoxDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:text="@string/delete_checkBox_text"
+        android:textSize="12sp"
+        android:theme="@style/delete_check_box"
+        app:layout_constraintTop_toBottomOf="@id/mTextViewDeleteAccountDescription" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/grey_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btn_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btn_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_delete_dialog_right"
+            android:enabled="false"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:paddingHorizontal="2dp"
+            android:text="@string/btn_delete_account"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+        <!--     android:background="@color/selected_bg"-->
+
+    </LinearLayout>
+
+
+</LinearLayout>

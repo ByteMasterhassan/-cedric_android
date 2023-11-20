@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.ChangePlanFragment">
+
+    <ImageView
+        android:id="@+id/imageSubscription"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:contentDescription="@string/subscription_background"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_new_subscription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="@dimen/back_btn"
+        android:layout_height="@dimen/back_btn"
+        android:layout_marginStart="@dimen/long_spacing"
+        android:layout_marginTop="@dimen/long_spacing"
+        android:background="@null"
+        android:contentDescription="@string/back"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewChangePlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/long_spacing"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/change_plan_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/pure_white"
+        android:textSize="@dimen/heading2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPlanLevel" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewYourCurrentPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_long_spacing"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingVertical="2dp"
+        android:text="@string/text_view_your_current_plan_is"
+        android:textAlignment="center"
+        android:textColor="@color/pure_white"
+        android:textSize="@dimen/moderate_text3"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPlanLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewYourCurrentPlan">
+
+
+        <ImageView
+            android:id="@+id/sub_heart_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/sub_heart"
+            android:src="@drawable/heart"
+            app:layout_constraintStart_toStartOf="@+id/textViewsSubscription"
+            app:layout_constraintTop_toBottomOf="@+id/textViewsSubscription" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_1x"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mTextViewGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/sub_heading" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mTextViewLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/sub_heading" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/changePlanCardView1"
+        style="@style/subscriptionCard"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="-85dp"
+        android:elevation="8dp"
+        android:focusable="true"
+        app:cardBackgroundColor="#FAA307"
+        app:layout_constraintBottom_toTopOf="@+id/changePlanCardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_spacing">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewPlanCardView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:maxWidth="220dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_heading"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewAllPlanCardView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_extrabold"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/moderate_text"
+                    app:layout_constraintStart_toStartOf="@+id/mTextViewPlanCardView1"
+                    app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanCardView1" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangePlanCardView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/btn_change_plan"
+                    android:textAllCaps="false"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/moderate_text"
+                    app:cornerRadius="45dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:elevation="10dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/changePlanCardView1">-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/changePlanCardView2"
+        style="@style/subscriptionCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardBackgroundColor="#FFBA08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xx_long_spacing">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewPlanCardView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:maxWidth="220dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_heading"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewAllLevelCardView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_extrabold"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/moderate_text"
+                    app:layout_constraintStart_toStartOf="@+id/mTextViewPlanCardView2"
+                    app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanCardView2" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChangePlanCardView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/btn_change_plan"
+                    android:textAllCaps="false"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/moderate_text"
+                    app:cornerRadius="45dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/changePlanItemDetailsRecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="105dp"
+                    android:layout_marginTop="@dimen/xx_long_spacing"
+                    android:elevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTextViewAllLevelCardView2"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_plan_details" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewTermsAndCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="@dimen/xx_long_spacing"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="@dimen/short_spacing"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/hyperlink1"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/changePlanItemDetailsRecyclerview" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!--</ScrollView>-->
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loading_lav"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:elevation="7dp"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/blurBkgTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:text="@string/adding_your_updated_diet_plan" />
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

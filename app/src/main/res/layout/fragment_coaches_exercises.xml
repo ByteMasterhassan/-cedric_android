@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefreshCoaches"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_white"
+    tools:context=".fragment.CoachesWorkoutsFragment"
+    tools:ignore="Overdraw">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pure_white">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/coaches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/coaches"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/heading2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/backArrow"
+                android:layout_width="@dimen/back_btn"
+                android:layout_height="@dimen/back_btn"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--<androidx.core.widget.NestedScrollView
+            android:id="@+id/verticalScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutTitle">-->
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutTitle">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="3dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="3dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/coachDp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp"
+                    tools:ignore="RtlSymmetry">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/coachName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@string/hello"
+                        android:textColor="@color/pure_black"
+                        android:textSize="@dimen/heading" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/moderate_text" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/textViewCoachRole"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="@string/coaches_Role"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:layout_marginBottom="@dimen/medium_spacing"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/bobby_s_plyometric_moves_will_help_you_nbuild_the_power_of_fly_like_a_hero"
+                android:textColor="@color/pure_black"
+                android:textSize="11sp" />
+
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:layout_marginTop="@dimen/short_spacing"
+                android:layout_marginBottom="@dimen/short_spacing"
+                android:background="@color/divider" />-->
+
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_weight="70"
+                 android:gravity="center"
+                 android:orientation="horizontal"
+                 android:paddingStart="@dimen/long_spacing"
+                 android:paddingTop="@dimen/medium_spacing"
+                 android:paddingEnd="@dimen/long_spacing"
+                 android:paddingBottom="@dimen/medium_spacing">
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/monBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="M"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/tuesBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="T"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/wedBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="W"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/thurBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="T"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/friBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="F"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/satBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="S"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+
+                 <com.google.android.material.button.MaterialButton
+                     android:id="@+id/sunBtn"
+                     android:layout_width="@dimen/btn_height"
+                     android:layout_height="@dimen/btn_height"
+                     android:layout_gravity="center"
+                     android:background="@drawable/textview_outline_style"
+                     android:backgroundTint="@null"
+                     android:fontFamily="@font/montserrat_semibold"
+                     android:paddingStart="0dp"
+                     android:paddingEnd="0dp"
+                     android:enabled="false"
+                     android:text="S"
+                     android:textAllCaps="true"
+                     android:textColor="@color/app_logo"
+                     android:textSize="@dimen/sub_heading"
+                     app:backgroundTint="@null"
+                     app:cornerRadius="45dp" />
+
+                 <View
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10" />
+             </LinearLayout>-->
+
+            <!-- <View
+                 android:layout_width="match_parent"
+                 android:layout_height="0.75dp"
+                 android:layout_marginTop="@dimen/short_spacing"
+                 android:layout_marginBottom="@dimen/short_spacing"
+                 android:background="@color/divider" />-->
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewWarmUP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/medium_spacing"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingBottom="8dp"
+                android:text="@string/warm_up"
+                android:textColor="#363C69"
+                android:textSize="@dimen/sub_heading"
+                android:visibility="gone" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewWarmUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:visibility="gone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewWorkouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginTop="@dimen/long_spacing"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:fontFamily="@font/montserrat_bold"
+                android:paddingBottom="8dp"
+                android:text="@string/workout"
+                android:textColor="#363C69"
+                android:textSize="@dimen/sub_heading"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+            <!--<com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWorkouts"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    &lt;!&ndash;add  several shimmer placeholder layout &ndash;&gt;
+
+                    <include layout="@layout/shimmer_program_exercises" />
+
+                    <include layout="@layout/shimmer_program_exercises" />
+
+                    <include layout="@layout/shimmer_program_exercises" />
+
+                    <include layout="@layout/shimmer_program_exercises" />
+
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewShimmerWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:scrollbars="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWorkouts" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/long_spacing"
+                android:layout_marginEnd="@dimen/long_spacing"
+                android:scrollbars="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWorkouts" />
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="20dp"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:orientation="vertical"-->
+            <!--                android:paddingBottom="6dp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/textViewWorkouts"-->
+            <!--                tools:ignore="MissingConstraints">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/morningImageCardView"-->
+            <!--                        android:layout_width="50dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        app:cardCornerRadius="25dp"-->
+            <!--                        app:cardElevation="2dp"-->
+            <!--                        app:strokeColor="@color/white"-->
+            <!--                        app:strokeWidth="2dp">-->
+
+            <!--                        <ImageView-->
+            <!--                            android:id="@+id/imageMorning"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="match_parent"-->
+            <!--                            android:scaleType="centerCrop"-->
+            <!--                            android:src="@drawable/jumping" />-->
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_bold"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="Shoulder Rotation"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="16sp" />-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_light"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="00:30"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="14sp" />-->
+            <!--                    </LinearLayout>-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingTop="8dp">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/afternoonImageCardView"-->
+            <!--                        android:layout_width="50dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        app:cardCornerRadius="25dp"-->
+            <!--                        app:cardElevation="2dp"-->
+            <!--                        app:strokeColor="@color/white"-->
+            <!--                        app:strokeWidth="2dp">-->
+
+            <!--                        <ImageView-->
+            <!--                            android:id="@+id/imageAfternoon"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="match_parent"-->
+            <!--                            android:scaleType="centerCrop"-->
+            <!--                            android:src="@drawable/jumping" />-->
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_bold"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="Windmill"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="16sp" />-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_light"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="00:20"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="14sp" />-->
+            <!--                    </LinearLayout>-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingTop="8dp">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/nightImageCardView"-->
+            <!--                        android:layout_width="50dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        app:cardCornerRadius="25dp"-->
+            <!--                        app:cardElevation="2dp"-->
+            <!--                        app:strokeColor="@color/white"-->
+            <!--                        app:strokeWidth="2dp">-->
+
+            <!--                        <ImageView-->
+            <!--                            android:id="@+id/imageNight"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="match_parent"-->
+            <!--                            android:scaleType="centerCrop"-->
+            <!--                            android:src="@drawable/jumping" />-->
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_bold"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="Swing kicks(Left)"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="16sp" />-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_light"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="00:15"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="14sp" />-->
+            <!--                    </LinearLayout>-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:paddingTop="8dp">-->
+
+            <!--                    <com.google.android.material.card.MaterialCardView-->
+            <!--                        android:id="@+id/planksCardView"-->
+            <!--                        android:layout_width="50dp"-->
+            <!--                        android:layout_height="50dp"-->
+            <!--                        app:cardCornerRadius="25dp"-->
+            <!--                        app:cardElevation="2dp"-->
+            <!--                        app:strokeColor="@color/white"-->
+            <!--                        app:strokeWidth="2dp">-->
+
+            <!--                        <ImageView-->
+            <!--                            android:id="@+id/shoulderrImage"-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="match_parent"-->
+            <!--                            android:scaleType="centerCrop"-->
+            <!--                            android:src="@drawable/jumping" />-->
+            <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_bold"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="Plank Walkout"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="16sp" />-->
+
+            <!--                        <com.google.android.material.textview.MaterialTextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center_vertical"-->
+            <!--                            android:fontFamily="@font/montserrat_light"-->
+            <!--                            android:paddingStart="10dp"-->
+            <!--                            android:text="00:20"-->
+            <!--                            android:textColor="#363C69"-->
+            <!--                            android:textSize="14sp" />-->
+            <!--                    </LinearLayout>-->
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loadMoreLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@color/background_black_transparent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/medium_spacing"
+            android:paddingTop="@dimen/medium_spacing"
+            android:paddingEnd="@dimen/medium_spacing"
+            android:paddingBottom="@dimen/medium_spacing"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="@dimen/medium_spacing"
+                android:indeterminateTint="@color/yellow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/please_wait_loading_more_workouts"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!--</androidx.core.widget.NestedScrollView>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

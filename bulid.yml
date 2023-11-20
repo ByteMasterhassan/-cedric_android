@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+      - new_development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+      - name: Generate Release APK
+        run: ./gradlew assembleRelease
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        # ID used to access action output
+       
+        id: sign_app
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{secrets.SIGNKEY}}
+          alias: "cedric_alias_key"
+          keyStorePassword: "Openbay@taar"
+          keyPassword: "Openbay@taar"
+      - uses: actions/upload-artifact@master
+        with:
+          name: app-release-unsigned-signed.apk
+          path: app/build/outputs/apk/release/app-release-unsigned-signed.apk
+      - name: Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.4.0
+        with:
+         appId: "1:24571724260:android:a344f0e81342c75a7587f1"
+         token: "1//03QlvxSDguN7aCgYIARAAGAMSNwF-L9IrAra8qIMCElYBtilQABVFBJ1MgGfBZSe3M0E0KCiDT0v3062gsxIZHzmZoIYpIo3n2FM"
+         groups: techozon-dev-team
+         file: app/build/outputs/apk/release/app-release-unsigned-signed.apk
+         debug: true

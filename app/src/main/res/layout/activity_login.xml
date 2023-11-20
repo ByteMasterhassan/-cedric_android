@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true"
+    app:statusBarBackground="@color/yellow"
+    tools:context=".activity.LoginActivity"
+    tools:ignore="Overdraw">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:background="@drawable/ic_login_background"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--<com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/welcome_to"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="#1B1B1B"
+                    android:textSize="@dimen/sub_heading"
+                    android:textStyle="bold" />-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/extra_long_spacing"
+                    android:layout_marginTop="@dimen/extra_long_spacing"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/splash_title"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pure_black"
+                    android:textSize="@dimen/app_name_heading"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/loginMsgTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/extra_long_spacing"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/login_message"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pure_black"
+                    android:textSize="@dimen/sub_heading"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutLoginEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:elevation="7dp"
+                    app:boxBackgroundColor="@color/pure_white"
+                    app:boxCornerRadiusBottomEnd="@dimen/field_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/field_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/field_radius"
+                    app:boxCornerRadiusTopStart="@dimen/field_radius"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#999999"
+                    app:startIconDrawable="@drawable/ic_baseline_email_24"
+                    app:startIconTint="#999999">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextLoginUsernameOrEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50"
+                        android:paddingVertical="3dp"
+                        android:singleLine="true"
+                        android:textColor="@color/pure_black"
+                        android:textColorHint="@color/field_hint_color"
+                        android:textSize="@dimen/field_text_size"
+                        tools:ignore="TextContrastCheck,TextContrastCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutLoginPassword"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:elevation="7dp"
+                    app:boxBackgroundColor="@color/pure_white"
+                    app:boxCornerRadiusBottomEnd="@dimen/field_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/field_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/field_radius"
+                    app:boxCornerRadiusTopStart="@dimen/field_radius"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:hintEnabled="false"
+                    app:hintTextColor="#999999"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="#999999"
+                    app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                    app:startIconTint="#999999">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextLoginPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/field_height"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:maxLength="12"
+                        android:paddingVertical="3dp"
+                        android:singleLine="true"
+                        android:textColor="@color/pure_black"
+                        android:textColorHint="@color/field_hint_color"
+                        android:textSize="@dimen/field_text_size"
+                        tools:ignore="TextContrastCheck" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/rememberMeCheckBox"
+                    style="@style/delete_check_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:text="@string/remember_me" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewForgetPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="160dp"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="50dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/forgot_password"
+                    android:textAllCaps="false"
+                    android:textColor="#7F6029"
+                    android:textSize="@dimen/moderate_text3"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/btn_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/btn_spacing"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/log_in"
+                    android:textAllCaps="true"
+                    android:textColor="@color/pure_white"
+                    android:textSize="@dimen/btn_text_size"
+                    app:cornerRadius="@dimen/button_radius" />
+
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewOr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@string/or"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="36sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSigUpLoginActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/btn_height"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/btn_spacing"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginEnd="@dimen/btn_spacing"
+                        android:background="@drawable/gradient_drawable_button"
+                        android:elevation="0dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/sign_up_txt"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="#1B1B1B"
+                        android:textSize="@dimen/btn_text_size"
+                        app:backgroundTint="@null"
+                        app:cornerRadius="@dimen/button_radius"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOr"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/envMTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/xx_long_spacing"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/moderate_text"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/appVersionMTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/xx_long_spacing"
+                        android:text="@string/v_1_0"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/moderate_text"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/environmentSwitchLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/medium_spacing"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+
+                        <RadioGroup
+                            android:id="@+id/apiGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            tools:ignore="UselessParent">
+
+                            <!--adding a radio button -->
+                            <RadioButton
+                                android:id="@+id/testing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:padding="10dp"
+                                android:text="@string/testing" />
+
+                            <RadioButton
+                                android:id="@+id/testingBeta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:padding="10dp"
+                                android:text="@string/testing_beta" />
+
+                            <!--adding a radio button -->
+                            <RadioButton
+                                android:id="@+id/staging"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:padding="10dp"
+                                android:text="@string/staging" />
+
+                            <!--adding a radio button -->
+                            <RadioButton
+                                android:id="@+id/beta"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:padding="10dp"
+                                android:text="@string/beta" />
+
+                            <RadioButton
+                                android:id="@+id/production"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                android:padding="10dp"
+                                android:text="@string/production" />
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <EditText
+                    android:id="@+id/envET"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:autofillHints=""
+                    android:background="@color/white"
+                    android:hint="@string/enter_environment_url"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/medium_spacing"
+                    android:paddingEnd="@dimen/medium_spacing" />
+
+                <Button
+                    android:id="@+id/submitEnvBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginTop="@dimen/long_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:text="@string/submit" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

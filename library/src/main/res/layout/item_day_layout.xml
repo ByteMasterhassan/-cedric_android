@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dayLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="?attr/itemDayBackground"
+    android:gravity="center"
+    android:minWidth="@dimen/item_day_minwidth"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingTop="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp"
+    tools:ignore=",Overdraw">
+
+    <TextView
+        android:id="@+id/item_day_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/itemDayNameTextColor"
+        tools:text="Today" />
+
+    <TextView
+        android:id="@+id/item_day_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textColor="?attr/itemDayNumberTextColor"
+        tools:text="22" />
+
+</LinearLayout>

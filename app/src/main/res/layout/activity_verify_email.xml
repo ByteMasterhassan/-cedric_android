@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1B1B"
+    tools:context=".activity.VerifyEmailActivity"
+    tools:ignore="Overdraw">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/splash_title"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/information_screen_headings"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/backArrow"
+                android:layout_width="@dimen/back_btn"
+                android:layout_height="@dimen/back_btn"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back_button"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTitle"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <!-- <LinearLayout
+            android:id="@+id/linearLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="@dimen/back_btn"
+                android:layout_height="@dimen/back_btn"
+                android:src="@drawable/back_button"
+                android:background="@null"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/back" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/title_name"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/information_screen_headings"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageLockPassword"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/lock"
+                    app:flow_verticalAlign="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewResetPasswordTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/email_verification"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pure_white"
+                    android:textSize="@dimen/sub_heading"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageLockPassword"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewResetPasswordTitle"
+                    tools:ignore="MissingConstraints">
+
+                    <in.aabhasjindal.otptextview.OtpTextView
+                        android:id="@+id/otp_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingBottom="5dp"
+                        android:inputType="number"
+                        android:textColor="@color/pure_white"
+                        app:bar_active_color="@color/app_logo"
+                        app:bar_enabled="true"
+                        app:bar_height="2dp"
+                        app:bar_success_color="#43a047"
+                        app:length="6"
+                        app:otp_text_size="27sp"
+                        app:width="40dp"
+                        tools:ignore="MissingClass" />
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/_00"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/moderate_text3"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintRight_toLeftOf="@+id/textViewResendOtp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutOtp"
+                    tools:ignore="MissingConstraints" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewResendOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/resend_otp"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/moderate_text3"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayoutOtp"
+                    app:layout_constraintHorizontal_bias="0.935"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayoutOtp"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutOtp"
+                    tools:ignore="MissingConstraints" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewPutOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/extra_long_spacing"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="@dimen/extra_long_spacing"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/please_enter_the_otp_code_sent_to_your_email"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayoutOtp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOtpResetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/btn_spacing"
+            android:layout_marginEnd="@dimen/btn_spacing"
+            android:layout_marginBottom="@dimen/btn_spacing"
+            android:background="@drawable/gradient_drawable_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/verify"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/btn_text_size"
+            app:backgroundTint="@null"
+            app:cornerRadius="45dp"
+            app:flow_verticalAlign="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+</androidx.constraintlayout.widget.ConstraintLayout>

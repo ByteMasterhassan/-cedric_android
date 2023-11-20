@@ -1,0 +1,38 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/horizontalcalendar/src/main/res/layout/hc_item_calendar.xml" value="0.27341772151898736" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable-mdpi/calender_background_color.xml" value="0.107" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable/calender_background_color.xml" value="0.107" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable/gradient_background.xml" value="0.107" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/drawable/gradient_drawable_button.xml" value="0.107" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/activity_choose_unit_type.xml" value="0.25555555555555554" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/activity_forget_password.xml" value="0.18" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/activity_login.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/activity_payment_category.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/activity_signup.xml" value="0.1175925925925926" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/activity_verify_email.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/best_program_warmup.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/best_program_workout.xml" value="0.22" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/coaches_workout.xml" value="0.15854700854700854" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_best_exercise_details.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_best_program_exercises.xml" value="0.1675213675213675" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_coaches_exercises.xml" value="0.13425925925925927" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_dashboard.xml" value="0.11814345991561181" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_exercise_details.xml" value="0.1" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_otp.xml" value="0.12777777777777777" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_reset_password.xml" value="0.11495726495726495" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/fragment_setting.xml" value="0.18" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/item_list_weekly_nutrition.xml" value="0.12777777777777777" />
+        <entry key="..\:/Android Studio Projects/Cedric/Cedric/app/src/main/res/layout/shimmer_program_exercises.xml" value="0.1675213675213675" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

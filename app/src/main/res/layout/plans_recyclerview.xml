@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/x_long_spacing">
+    <!--<com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewPayMethod"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:cardCornerRadius="30dp"
+        android:backgroundTint="@null"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:strokeColor="@color/yellow"
+        app:strokeWidth="2dp"
+        tools:ignore="MissingConstraints">-->
+
+    <LinearLayout
+        android:id="@+id/cardMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/webview_style"
+        android:orientation="vertical"
+        android:paddingBottom="2dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/x_long_spacing"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/x_long_spacing"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/originalPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#82746D"
+                tools:ignore="RtlSymmetry" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/totalPriceBeforeDiscountTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/medium_spacing_2"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#82746D"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/discountPercentageTV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/discountPercentageTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#82746D"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/x_long_spacing"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/x_long_spacing"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/planDurationTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_bold"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/white"
+                tools:ignore="RtlSymmetry" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/planTotalPriceTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/white"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--  </com.google.android.material.card.MaterialCardView>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

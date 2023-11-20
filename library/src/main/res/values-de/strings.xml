@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">library</string>
+    <string name="today">Today</string>
+    <string name="General_Today_Steps">Today Steps : </string>
+    <string name="General_PedoMeter_session">Pedometer session is running in the background.</string>
+</resources>

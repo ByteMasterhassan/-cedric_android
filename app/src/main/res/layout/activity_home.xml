@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.HomeActivity">
+
+
+    <FrameLayout
+        android:id="@+id/navigation_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_navigation_background"
+        android:clipChildren="false"
+        app:elevation="7dp"
+        app:itemBackground="@null"
+        app:itemIconTint="@drawable/bottom_navbar_color"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:itemTextColor="@drawable/bottom_navbar_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigation" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/good_morning"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/long_spacing"
+        android:layout_marginBottom="@dimen/long_spacing"
+        android:backgroundTint="@color/yellow"
+        android:clickable="true"
+        android:contentDescription="@string/chat_bot"
+        android:focusable="true"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_chat_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

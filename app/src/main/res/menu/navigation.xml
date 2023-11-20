@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_plans_Home"
+        android:enabled="true"
+        android:icon="@drawable/ic_calender"
+        android:title="@string/nav_home" />
+
+
+    <item
+        android:id="@+id/navigation_programs"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="@string/nav_programs" />
+
+    <item
+        android:id="@+id/navigation_explore"
+        android:enabled="true"
+        android:icon="@drawable/explore"
+        android:title="@string/nav_explore" />
+
+    <item
+        android:id="@+id/navigation_shopping"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:title="@string/nav_shopping_list" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/nav_setting" />
+</menu>

@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.NewSelectedSubscriptionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageSubscription"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:contentDescription="@string/subscription_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_new_subscription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/back_btn"
+            android:layout_height="@dimen/back_btn"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:background="@null"
+            android:contentDescription="@string/back"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewsSubscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/xx_long_spacing"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/subscription_new"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/pure_white"
+            android:textSize="@dimen/heading2"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewsSubscription">
+
+
+            <ImageView
+                android:id="@+id/sub_heart_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/sub_heart"
+                android:src="@drawable/heart"
+                app:layout_constraintStart_toStartOf="@+id/textViewsSubscription"
+                app:layout_constraintTop_toBottomOf="@+id/textViewsSubscription" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_1x"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/sub_heart_image"
+                app:layout_constraintTop_toBottomOf="@+id/textViewsSubscription">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/moderate_text3" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mTextViewLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/moderate_text3" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/subPlanCardView1"
+            style="@style/subscriptionCard"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="-80dp"
+            android:background="@drawable/cardview_round_left"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#F48C06"
+            app:layout_constraintBottom_toTopOf="@+id/subPlanCardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPerOFFCardView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toTopOf="@+id/mTextViewPlanDurationPriceCardView1"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPlanDurationPriceCardView1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPlanDurationPriceCardView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:minWidth="180dp"
+                        android:text=""
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sub_heading"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPerOFFCardView1"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPerOFFCardView1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPlanDurationCardView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium_text2"
+                        app:layout_constraintStart_toStartOf="@+id/mTextViewPlanDurationPriceCardView1"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationPriceCardView1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/planPriceCardView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium_text2"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPlanDurationPriceCardView1"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationPriceCardView1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewActualAmountCardView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSubscribeCardView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/btn_subscribe_text"
+                            android:textAllCaps="false"
+                            android:textColor="@color/yellow"
+                            android:textSize="12sp"
+                            app:cornerRadius="45dp" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/subPlanCardView2"
+            style="@style/subscriptionCard"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginBottom="-80dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#FAA307"
+            app:layout_constraintBottom_toTopOf="@+id/subPlanCardView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPerOFFCardView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toTopOf="@+id/mTextViewPlanDurationPriceCardView2"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPlanDurationPriceCardView2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPlanDurationPriceCardView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:minWidth="180dp"
+                        android:text=""
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sub_heading"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPerOFFCardView2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPerOFFCardView2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPlanDurationCardView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium_text2"
+                        app:layout_constraintStart_toStartOf="@+id/mTextViewPlanDurationPriceCardView2"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationPriceCardView2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/planPriceCardView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium_text2"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPlanDurationPriceCardView2"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationPriceCardView2" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewActualAmountCardView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/btnSubscribeCardView2"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSubscribeCardView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/btn_subscribe_text"
+                            android:textAllCaps="false"
+                            android:textColor="@color/yellow"
+                            android:textSize="12sp"
+                            app:cornerRadius="45dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewActualAmountCardView2" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/subPlanCardView3"
+            style="@style/subscriptionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#FFBA08"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPerOFFCardView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="180dp"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPlanDurationPriceCardView3"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPlanDurationPriceCardView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/short_spacing"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:minWidth="180dp"
+                        android:text=""
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sub_heading"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPerOFFCardView3"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPerOFFCardView3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewPlanDurationCardView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium_text2"
+                        app:layout_constraintStart_toStartOf="@+id/mTextViewPlanDurationPriceCardView3"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationPriceCardView3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/planPriceCardView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/medium_text2"
+                        app:layout_constraintEnd_toEndOf="@+id/mTextViewPlanDurationPriceCardView3"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationPriceCardView3" />
+
+                    <LinearLayout
+                        android:id="@+id/unsubscribeLL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/mTextViewActualAmountCardView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text=""
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:visibility="visible"
+
+                            />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSubscribeCardView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:backgroundTint="@color/red"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:text="@string/btn_unsubscribe_plan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:cornerRadius="45dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/planPriceCardView3"
+                            app:layout_constraintTop_toBottomOf="@+id/mTextViewActualAmountCardView3" />
+                    </LinearLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewExpireDateCardView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/unsubscribeLL" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/planItemDetailsRecyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="105dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTextViewPlanDurationCardView3"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/item_plan_details" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutToggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/short_spacing"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/planItemDetailsRecyclerview">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/toggleButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/track_color"
+                            android:thumbTint="@color/thumb_color"
+                            android:trackTint="@color/track_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/toggleTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:padding="4dp"
+                            android:text="@string/pause_subscription_toggle"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mTextViewTermsAndCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/short_spacing"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:text="@string/hyperlink1"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutToggle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        app:blurOverlayColor="@color/colorOverlay">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+
+
+    </eightbitlab.com.blurview.BlurView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

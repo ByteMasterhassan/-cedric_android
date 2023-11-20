@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/curved_stroke_grey_background_shimmer"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/packageTypeTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_top_background_shimmer"
+            android:backgroundTint="@color/shimmer_placeholder"
+            android:padding="10dp"
+            android:text="@string/standard"
+            android:textAlignment="center"
+            android:textColor="@color/shimmer_placeholder"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/packageDetailsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/shimmer_placeholder"
+            android:text="@string/aed_450_6_months_aed_75_per_month"
+            android:textAllCaps="true"
+            android:textColor="@color/shimmer_placeholder"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/planDiscountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/shimmer_placeholder"
+            android:text=""
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/subscribeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="30dp"
+            android:background="@color/shimmer_placeholder"
+            android:padding="10dp"
+            android:text="@string/re_subscribe"
+            android:textColor="@color/shimmer_placeholder"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

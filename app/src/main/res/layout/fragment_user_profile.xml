@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.UserProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/MyCardViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:outlineSpotShadowColor="@color/black"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p">
+
+            <ImageButton
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="20dp"
+                android:src="@drawable/back_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                android:contentDescription="@string/back_arrow" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerForProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                tools:ignore="MissingConstraints">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--add  several shimmer placeholder layout -->
+
+                    <include layout="@layout/shimmer_for_user_profile" />
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:id="@+id/profileImageCardView"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    app:cardCornerRadius="50dp"-->
+<!--                    app:cardElevation="4dp">-->
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profileUserImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:elevation="4dp"
+                        android:src="@drawable/profile"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"
+                        />
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/user_name"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/userGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/gender_male"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewAboutAgeWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="@color/yellow"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/user_weight"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewWeightUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingBottom="16dp"
+                        android:singleLine="true"
+                        android:text="@string/weight_unit_kg"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="35dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/user_age"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/user_height"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewHeightUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingBottom="16dp"
+                        android:singleLine="true"
+                        android:text="@string/height_unit_in_ft_in"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewAboutBMPHrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            app:cardBackgroundColor="@color/yellow"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewAboutAgeWeight">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingBottom="35dp"
+                        android:text="@string/user_bmp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="35dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/user_kcal"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1.5dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingBottom="35dp"
+                        android:text="@string/hrs"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editProfileBtn"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/yellow"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@string/btn_edit_profile"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="45dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewAboutBMPHrs"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

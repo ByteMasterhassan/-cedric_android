@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefreshProgressExercise"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.BestProgramExercises">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayoutBio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/heading2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/backArrow"
+                android:layout_width="@dimen/back_btn"
+                android:layout_height="@dimen/back_btn"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:contentDescription="@string/back"
+                android:src="@drawable/back_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayoutBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutTitle"
+            tools:ignore="MissingConstraints">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/app_logo" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingStart="12dp"
+                tools:ignore="RtlSymmetry">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewProgramNameProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text=""
+                    android:textColor="@color/pure_black"
+                    android:textSize="@dimen/heading" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:fontFamily="@font/montserrat_regular"
+            android:text=""
+            android:textColor="@color/pure_black"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutBio"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewWarmUP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="8dp"
+            android:text="@string/warm_up"
+            android:textColor="#607D8B"
+            android:textSize="@dimen/sub_heading"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
+            tools:ignore="MissingConstraints" />
+
+        <!--<com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWarmUP"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                &lt;!&ndash;add  several shimmer placeholder layout &ndash;&gt;
+                <include layout="@layout/shimmer_program_exercises" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewBestProgramWarmUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:scrollbars="vertical"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/textViewWorkouts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWarmUP" />-->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewWorkouts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingBottom="8dp"
+            android:text="@string/workout"
+            android:textColor="#363C69"
+            android:textSize="@dimen/sub_heading"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/long_spacing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/textViewWorkouts"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--add  several shimmer placeholder layout -->
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+                <include layout="@layout/shimmer_program_exercises" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewBestProgramWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginEnd="@dimen/long_spacing"
+            android:scrollbars="vertical"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWorkouts" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.UpdateProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <!--    <LinearLayout-->
+            <!--        android:id="@+id/linearLayoutForCardView"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="vertical"-->
+            <!--        tools:ignore="MissingConstraints">-->
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/MyCardViewProfile"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:outlineSpotShadowColor="@color/pure_black"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/backArrow"
+                    android:layout_width="@dimen/back_btn"
+                    android:layout_height="@dimen/back_btn"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@null"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/back_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerForProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    tools:ignore="MissingConstraints">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!--add  several shimmer placeholder layout -->
+
+                        <include layout="@layout/shimmer_for_user_profile" />
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--                <com.google.android.material.card.MaterialCardView-->
+                    <!--                    android:layout_width="100dp"-->
+                    <!--                    android:layout_height="100dp"-->
+                    <!--                    android:layout_gravity="center_horizontal"-->
+                    <!--                    android:layout_marginTop="20dp"-->
+                    <!--                    app:cardCornerRadius="50dp"-->
+                    <!--                    app:cardElevation="4dp">-->
+
+                    <!--<de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userImageFromGallery"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:elevation="4dp"
+                        android:src="@drawable/profile" />-->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/userImageFromGallery"
+                        android:scaleType="centerCrop"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        app:strokeWidth="3dp"
+                        android:padding="@dimen/short_spacing"
+                        android:elevation="2dp"
+                        app:shapeAppearanceOverlay="@style/profileImg"
+                        android:background="@drawable/profile"/>
+                    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/upload_your_profile_image"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <!--    </LinearLayout>-->
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/textViewUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/name"
+                        android:textColor="@color/pure_black"
+                        android:textSize="@dimen/field_title_size"
+                        tools:ignore="TextContrastCheck" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/field_spacing"
+                        android:layout_marginEnd="@dimen/field_spacing"
+                        android:textColorHint="#858585"
+                        app:boxCornerRadiusBottomEnd="45dp"
+                        app:boxCornerRadiusBottomStart="45dp"
+                        app:boxCornerRadiusTopEnd="45dp"
+                        app:boxCornerRadiusTopStart="45dp"
+                        app:boxStrokeColor="@color/edit_textbox_color"
+                        app:boxStrokeWidth="2dp"
+                        app:endIconTint="@color/yellow"
+                        app:hintTextColor="@color/yellow">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextUpdateUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/field_height"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:inputType="text"
+                            android:maxLength="25"
+                            android:paddingVertical="1dp"
+                            android:singleLine="true"
+                            android:text="@string/name"
+                            android:textColor="@color/pure_black"
+                            android:textSize="@dimen/field_text_size"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/emailLabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="@string/email"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/field_title_size"
+                        tools:ignore="TextContrastCheck" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/field_spacing"
+                        android:layout_marginEnd="@dimen/field_spacing"
+                        android:textColorHint="#858585"
+                        app:boxCornerRadiusBottomEnd="45dp"
+                        app:boxCornerRadiusBottomStart="45dp"
+                        app:boxCornerRadiusTopEnd="45dp"
+                        app:boxCornerRadiusTopStart="45dp"
+                        app:boxStrokeColor="@color/edit_textbox_color"
+                        app:boxStrokeWidth="2dp"
+                        app:endIconTint="@color/yellow"
+                        app:hintTextColor="@color/yellow">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextUpdateEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/field_height"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:inputType="none"
+                            android:maxLength="50"
+                            android:paddingVertical="1dp"
+                            android:singleLine="true"
+                            android:text="@string/email"
+                            android:textColor="@color/pure_black"
+                            android:textSize="@dimen/field_text_size"
+                            tools:ignore="Deprecated,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ageLabelTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="56dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:maxLength="3"
+                        android:text="@string/age"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/field_title_size"
+                        tools:ignore="TextContrastCheck" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/field_spacing"
+                        android:layout_marginEnd="@dimen/field_spacing"
+                        android:nextFocusDown="@+id/editTextHeightUpdate"
+                        android:textColorHint="#858585"
+                        app:boxCornerRadiusBottomEnd="45dp"
+                        app:boxCornerRadiusBottomStart="45dp"
+                        app:boxCornerRadiusTopEnd="45dp"
+                        app:boxCornerRadiusTopStart="45dp"
+                        app:boxStrokeColor="@color/edit_textbox_color"
+                        app:boxStrokeWidth="2dp"
+                        app:endIconTint="@color/yellow"
+                        app:hintTextColor="@color/yellow">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextUpdateAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/field_height"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:paddingVertical="1dp"
+                            android:singleLine="true"
+                            android:text="@string/age"
+                            android:textColor="@color/pure_black"
+                            android:textSize="@dimen/field_text_size"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/field_spacing"
+                        android:layout_marginEnd="@dimen/field_spacing"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="15dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/height_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="16dp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/height"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/field_title_size"
+                                tools:ignore="TextContrastCheck" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:textColorHint="#858585"
+                                app:boxCornerRadiusBottomEnd="45dp"
+                                app:boxCornerRadiusBottomStart="45dp"
+                                app:boxCornerRadiusTopEnd="45dp"
+                                app:boxCornerRadiusTopStart="45dp"
+                                app:boxStrokeColor="@color/edit_textbox_color"
+                                app:boxStrokeWidth="2dp"
+                                app:hintTextColor="@color/yellow">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/editTextHeightUpdate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/field_height"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:gravity="center"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="numberDecimal"
+                                    android:paddingVertical="1dp"
+                                    android:singleLine="true"
+                                    android:text="@string/height"
+                                    android:textColor="@color/pure_black"
+                                    android:textSize="@dimen/field_text_size"
+                                    tools:ignore="TouchTargetSizeCheck" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/weight_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="24dp"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/weight"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/field_title_size" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:textColorHint="#858585"
+                                app:boxCornerRadiusBottomEnd="45dp"
+                                app:boxCornerRadiusBottomStart="45dp"
+                                app:boxCornerRadiusTopEnd="45dp"
+                                app:boxCornerRadiusTopStart="45dp"
+                                app:boxStrokeColor="@color/edit_textbox_color"
+                                app:boxStrokeWidth="2dp"
+                                app:hintTextColor="@color/yellow">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/editTextWeightUpdate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/field_height"
+                                    android:fontFamily="@font/montserrat_medium"
+                                    android:gravity="center"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:paddingVertical="1dp"
+                                    android:singleLine="true"
+                                    android:text="@string/weight"
+                                    android:textColor="@color/pure_black"
+                                    android:textSize="@dimen/field_text_size"
+                                    tools:ignore="TouchTargetSizeCheck" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/updateProfileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/btn_spacing"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="@dimen/btn_spacing"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/gradient_drawable_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="@string/update_profile"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/btn_text_size"
+            app:backgroundTint="@null"
+            app:cornerRadius="45dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

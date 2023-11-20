@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="sub_color">#F5F5F5</color>-->
+    <color name="app_logo">#FFC153</color>
+    <color name="dotNormal">#707dc6</color>
+    <color name="dotHighlight">#f43d7b</color>
+    <color name="pure_red">#FF0000</color>
+    <color name="water">#53acfe</color>
+</resources>

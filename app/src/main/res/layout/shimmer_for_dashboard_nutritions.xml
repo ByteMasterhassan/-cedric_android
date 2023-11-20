@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/long_spacing"
+        android:paddingTop="@dimen/short_spacing"
+        android:paddingEnd="@dimen/long_spacing"
+        android:paddingBottom="@dimen/short_spacing"
+        android:weightSum="2"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/short_spacing">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="@color/shimmer_placeholder"
+                    android:contentDescription="@string/imageBreakfastShimmer"
+                    android:scaleType="fitXY" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="90dp"
+                    android:background="@color/shimmer_placeholder"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pure_white"
+                    android:textSize="13sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/short_spacing">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="15dp"
+
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/shimmer_placeholder"
+                    android:contentDescription="@string/imageLunchShimmer"
+                    android:scaleType="fitXY" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/shimmer_placeholder"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pure_white"
+                    android:textSize="13sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/shimmer_placeholder"
+                    android:contentDescription="@string/imageDinnerShimmer"
+                    android:scaleType="fitXY" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pure_white"
+                    android:textSize="13sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

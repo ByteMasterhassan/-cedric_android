@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/shimmerNutritionCard"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp"
+        tools:ignore="MissingConstraints">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/shimmerNutritionImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/shimmer_placeholder" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/deleteNutrition"-->
+    <!--        android:background="@null"-->
+    <!--        android:elevation="7dp"-->
+    <!--        android:visibility="invisible"-->
+    <!--        android:src="@drawable/ic_baseline_delete_forever_24"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/nutritionCard"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/nutritionCard"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/nutritionCard" />-->
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/shimmerTextViewNutritionName"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@color/shimmer_placeholder"
+        android:fontFamily="@font/montserrat_medium"
+        android:lines="3"
+        android:text="@string/banana_peanut_butter_n_super_smoothie"
+        android:textAlignment="center"
+        android:textColor="@color/shimmer_placeholder"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shimmerNutritionCard"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_level_bg"
+    android:scaleType="fitXY"
+    tools:context=".activity.FitnessLevelActivity"
+    tools:ignore="Overdraw">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="@dimen/back_btn"
+            android:layout_height="@dimen/back_btn"
+            android:layout_marginStart="@dimen/long_spacing"
+            android:layout_marginTop="@dimen/long_spacing"
+            android:background="@null"
+            android:contentDescription="@string/back"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+            android:id="@+id/segmented_progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginStart="@dimen/extra_long_spacing"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="@dimen/extra_long_spacing"
+            app:container_color="@color/pure_white"
+            app:fill_color="@color/app_logo"
+            app:gap_size="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewFitnessLevel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:segment_count="7"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewFitnessLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/what_s_your_current_n_fitness_level"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white"
+            android:textSize="@dimen/information_screen_headings"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/segmented_progressbar" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="57dp"
+            android:layout_marginBottom="@dimen/btn_spacing"
+            app:layout_constraintBottom_toTopOf="@+id/btnFitnessNext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFitnessLevel">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewBeginner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:background="@drawable/textview_outline_style"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:paddingStart="24dp"
+                    android:text="@string/beginner"
+                    android:textColor="@color/pure_white"
+                    android:textSize="@dimen/btn_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewIntermediate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginTop="@dimen/x_long_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:background="@drawable/textview_outline_style"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:paddingStart="24dp"
+                    android:text="@string/intermediate"
+                    android:textColor="@color/pure_white"
+                    android:textSize="@dimen/btn_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewBeginner"
+                    tools:ignore="RtlSymmetry" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textViewAdvance"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/field_height"
+                    android:layout_marginStart="@dimen/field_spacing"
+                    android:layout_marginTop="@dimen/x_long_spacing"
+                    android:layout_marginEnd="@dimen/field_spacing"
+                    android:background="@drawable/textview_outline_style"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:paddingStart="24dp"
+                    android:text="@string/advanced"
+                    android:textColor="@color/pure_white"
+                    android:textSize="@dimen/btn_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewIntermediate"
+                    tools:ignore="RtlSymmetry" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFitnessNext"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/btn_spacing"
+            android:layout_marginEnd="@dimen/btn_spacing"
+            android:layout_marginBottom="@dimen/btn_spacing"
+            android:background="@drawable/gradient_drawable_button"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="@string/next"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/btn_text_size"
+            app:backgroundTint="@null"
+            app:cornerRadius="@dimen/button_radius"
+            app:flow_verticalAlign="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blurView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:blurOverlayColor="@color/colorOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lav"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:elevation="7dp"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+    </eightbitlab.com.blurview.BlurView>
+</androidx.constraintlayout.widget.ConstraintLayout>
